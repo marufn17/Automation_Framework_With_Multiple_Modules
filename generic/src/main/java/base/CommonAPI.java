@@ -24,7 +24,7 @@ public class CommonAPI {
     public void closeDriver(){driver.close();}
 
     public WebDriver getDriver(String os, String browserName){
-        if(browserName.equalsIgnoreCase("chrom")){
+        if(browserName.equalsIgnoreCase("chrome")){
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             options.addArguments("--ignore-certificate-errors");
