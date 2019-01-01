@@ -1,4 +1,4 @@
-# AutomationP1
-Please Read before clone
+# Please Read before clone
+# "git clone -b <branch> <remote_repo>"
 Please use this syntex to clone your branch
-"git clone -b <branch> <remote_repo>"
+
