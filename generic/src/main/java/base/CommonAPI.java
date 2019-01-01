@@ -2,7 +2,10 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
@@ -20,21 +23,33 @@ public class CommonAPI {
     @AfterMethod
     public void closeDriver(){driver.close();}
 
-    public WebDriver getDriver(String os, String browserName) {
-        if (os.equalsIgnoreCase("mac")) {
-            if (browserName.equalsIgnoreCase("chrome")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/Drivers/Mac/chromedriver");
-                driver = new ChromeDriver();
-            } else if (browserName.equalsIgnoreCase("firefox")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/Drivers/Mac/geckodriver");
-                driver = new FirefoxDriver();
-            }
-        } else if (os.equalsIgnoreCase("windows")) {
-            if (browserName.equalsIgnoreCase("chrome")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/Drivers/Windows/chromedriver.exe");
-                driver = new ChromeDriver();
-            } else if (browserName.equalsIgnoreCase("firefox")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/Drivers/Windows/geckodriver.exe");
+    public WebDriver getDriver(String os, String browserName){
+        if(browserName.equalsIgnoreCase("chrom")){
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--start-maximized");
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--incognito");
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+            if(os.equalsIgnoreCase("mac")){
+                System.setProperty("webdriver.chrome.driver","../Generic/Drivers/Mac/chromedriver");
+                driver = new ChromeDriver(options);}
+            else if(os.equalsIgnoreCase("windows")){
+                System.setProperty("webdriver.chrome.driver","../Generic/Drivers/Windows/chromedriver.exe");
+                driver = new ChromeDriver(options);}
+        }else if (browserName.equalsIgnoreCase("firefox")){
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--start-maximized");
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--private");
+            DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+            capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
+            if (os.equalsIgnoreCase("mac")){
+                System.setProperty("webdriver.chrome.driver","../Generic/Drivers/Mac/geckodriver");
+                driver = new FirefoxDriver(options);
+            }else if (os.equalsIgnoreCase("windows")){
+                System.setProperty("webdriver.gecko.driver","../Generic/Drivers/Windows/geckodriver.exe");
+                driver = new FirefoxDriver(options);
             }
         }
         return driver;
