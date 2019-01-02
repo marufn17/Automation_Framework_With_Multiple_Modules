@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Amazon Automation Script " parallel="false">
+<suite name="NBC Automation Test" parallel="false">
 
     <!--<parameter name="useCloudEnv" value="false"/>-->
     <!--<parameter name="cloudEnvName" value="browserstack"/>-->
@@ -9,11 +9,14 @@
     <!--<parameter name="os_version" value="Sierra"/>-->
     <!--<parameter name="browserName" value="${browserName}"/>-->
     <!--<parameter name="browserVersion" value="53.0"/>-->
-    <parameter name="url1" value="https://www.amazon.com"/>
+    <!--<parameter name="url" value="https://www.nbc.com"/>-->
+    <parameter name="os" value="mac"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.nbc.com"/>
 
-    <test name = "Amazon Home">
+    <test name = "TestHomePage(Mac/Chrome)">
         <classes>
-            <class name="TestHome"/>
+            <class name="TestPages.TestHomePage"/>
         </classes>
     </test>
 
