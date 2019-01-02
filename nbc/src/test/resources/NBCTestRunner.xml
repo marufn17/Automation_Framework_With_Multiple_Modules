@@ -9,11 +9,11 @@
     <!--<parameter name="os_version" value="Sierra"/>-->
     <!--<parameter name="browserName" value="${browserName}"/>-->
     <!--<parameter name="browserVersion" value="53.0"/>-->
-    <parameter name="url" value="https://www.facebook.com"/>
+    <parameter name="url1" value="https://www.amazon.com"/>
 
     <test name = "Amazon Home">
         <classes>
-            <class name="TestSignUp"/>
+            <class name="TestHome"/>
         </classes>
     </test>
 
