@@ -1,2 +1,6 @@
 *.idea
 *.iml
+*target
+*.credentials
+*Extent-Report
+*screenshots
