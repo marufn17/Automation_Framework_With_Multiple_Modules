@@ -11,6 +11,7 @@
     <modules>
         <module>generic</module>
         <module>nbc</module>
+        <module>Facebook</module>
     </modules>
 
     <dependencyManagement>
