@@ -10,7 +10,7 @@ public class TestHomePage extends CommonAPI {
 
 
     @BeforeMethod
-    public void setUp(){this.homePage = new HomePage();}
+    public void setUp(){homePage = PageFactory.initElements(driver,HomePage.class);}
 
     @Test
     public void homePageTitleTest(){homePage.getHomePageTitle();}
