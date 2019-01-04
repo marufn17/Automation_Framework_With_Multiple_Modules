@@ -16,8 +16,10 @@
 
     <test name = "TestHomePage(Mac/Chrome)">
         <classes>
-            <class name="TestPages.TestHomePage"/>
+            <class name="test.page.objects.TestHomePage"/>
         </classes>
     </test>
+
+
 
 </suite>
