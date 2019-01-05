@@ -14,17 +14,10 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.nbc.com"/>
 
-    <!--<test name = "TestHomePage(Mac/Chrome)">
+    <test name = "NBC Test Suits (Mac/Chrome)">
         <classes>
             <class name="test.page.objects.TestHomePage"/>
-        </classes>
-    </test>-->
-    <test name = "TestFooterPage(Mac/Chrome)">
-        <classes>
             <class name="test.page.objects.TestFooterPage"/>
         </classes>
     </test>
-
-
-
 </suite>
