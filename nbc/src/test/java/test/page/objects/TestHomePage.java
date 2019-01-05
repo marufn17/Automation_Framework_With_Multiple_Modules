@@ -1,13 +1,13 @@
 package test.page.objects;
 
-import base.CommonAPI;
+import application.page.base.ApplicationPageBase;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
 
-public class TestHomePage extends CommonAPI {
+public class TestHomePage extends ApplicationPageBase {
 
     HomePage homePage;
 
@@ -46,7 +46,7 @@ public class TestHomePage extends CommonAPI {
     }
     @Test
     public void fullSessionBartest(){
-        String text = homePage.fullSesisonBar();
+        String text = homePage.fullSeasonsBar();
         Assert.assertEquals(text,"WATCH FULL SEASONS");
     }
     @Test
@@ -54,5 +54,49 @@ public class TestHomePage extends CommonAPI {
         String text = homePage.trendingNowBar();
         Assert.assertEquals(text,"TRENDING NOW");
     }
-
+    @Test
+    public void clickShows(){
+        String actualText = homePage.clickShows();
+        Assert.assertEquals(actualText,"SHOWS");
+    }
+    @Test
+    public void clickEpisodes(){
+        String text = homePage.clickEpisods();
+        Assert.assertEquals(text,"EPISODES");
+    }
+    @Test
+    public void clickSchedule(){
+        String text = homePage.clickSchedule();
+        Assert.assertEquals(text,"SCHEDULE");
+    }
+    @Test
+    public void clickNewsAndSports(){
+        String text = homePage.clickNewsAndSports();
+        Assert.assertEquals(text,"NEWS & SPORTS");
+    }
+    @Test
+    public void clickShop(){
+        String text = homePage.clickShops();
+        Assert.assertEquals(text,"SHOP");
+    }
+    @Test
+    public void clickApp(){
+        String text = homePage.clickApp();
+        Assert.assertEquals(text,"APP");
+    }
+    @Test
+    public void clickLive(){
+        String text = homePage.clickLive();
+        Assert.assertEquals(text,"LIVE");
+    }
+    @Test
+    public void clickSearch(){
+        String text = homePage.clickSearch();
+        Assert.assertEquals(text,"");
+    }
+    @Test
+    public void clickSignup(){
+        String text = homePage.clickSignup();
+        Assert.assertEquals(text,"SIGN UP");
+    }
 }
