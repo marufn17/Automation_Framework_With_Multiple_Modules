@@ -8,15 +8,11 @@
 
     <test name = "TestSearch">
         <classes>
-            <class name="Test.TestS"/>
+            <class name="Test.TestHomePage"/>
+
         </classes>
     </test>
 
-    <test name = "TestSearch">
-        <classes>
-            <class name="Test.TestS"/>
-        </classes>
-    </test>
 
 
 
