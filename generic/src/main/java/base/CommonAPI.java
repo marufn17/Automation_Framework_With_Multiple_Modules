@@ -38,8 +38,7 @@ public class CommonAPI {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);}
-    /*AfterMethod
-    public void closeDriver() throws InterruptedException{Thread.sleep(1000); driver.close();}*/
+
     public WebDriver getDriverIncognito(String os, String browserName){
         if(browserName.equalsIgnoreCase("chrome")){
             ChromeOptions options = new ChromeOptions();
