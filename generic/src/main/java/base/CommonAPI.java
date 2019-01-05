@@ -3,10 +3,7 @@ package base;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.codehaus.plexus.util.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,9 +12,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 import report.ExtentManager;
 import report.ExtentTestManager;
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -51,7 +48,7 @@ public class CommonAPI {
                 System.setProperty("webdriver.chrome.driver","../Generic/Drivers/Mac/chromedriver");
                 driver = new ChromeDriver(options);}
             else if(os.equalsIgnoreCase("windows")){
-                System.setProperty("webdriver.chrome.driver","../Generic/Drivers/Windows/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver","..\\Generic\\Drivers\\Windows\\chromedriver.exe");
                 driver = new ChromeDriver(options);}
         }else if (browserName.equalsIgnoreCase("firefox")){
             FirefoxOptions options = new FirefoxOptions();
@@ -64,7 +61,7 @@ public class CommonAPI {
                 System.setProperty("webdriver.chrome.driver","../Generic/Drivers/Mac/geckodriver");
                 driver = new FirefoxDriver(options);
             }else if (os.equalsIgnoreCase("windows")){
-                System.setProperty("webdriver.gecko.driver","../Generic/Drivers/Windows/geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver","..\\Generic\\Drivers\\Windows\\geckodriver.exe");
                 driver = new FirefoxDriver(options);
             }
         }
