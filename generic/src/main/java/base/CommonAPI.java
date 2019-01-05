@@ -77,10 +77,10 @@ public class CommonAPI {
                 driver = new FirefoxDriver();}
         } else if (os.contains("windows")) {
             if (browser.equalsIgnoreCase("chrome")) {
-                System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "..\\Generic\\Drivers\\Windows\\chromedriver.exe");
                 driver = new ChromeDriver();
             } else if (browser.equalsIgnoreCase("Firefox")) {
-                System.setProperty("webdriver.gecko.driver", "Driver/geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "..\\Generic\\Drivers\\Windows\\geckodriver.exe");
                 driver = new FirefoxDriver();}
         }
     }
