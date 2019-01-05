@@ -4,6 +4,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.codehaus.plexus.util.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,9 +20,11 @@ import org.testng.annotations.Optional;
 import report.ExtentManager;
 import report.ExtentTestManager;
 import report.TestLogger;
-
 import java.io.File;
 import java.io.IOException;
+import report.ExtentManager;
+import report.ExtentTestManager;
+import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
@@ -38,6 +44,7 @@ public class CommonAPI {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);}
+
     //@AfterMethod
     public void closeDriver() throws InterruptedException{Thread.sleep(1000); driver.close();}
 
