@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends CommonAPI {
     public HomePage() {
-        PageFactory.initElements(driver, HomePage.class);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "gh-ac")
