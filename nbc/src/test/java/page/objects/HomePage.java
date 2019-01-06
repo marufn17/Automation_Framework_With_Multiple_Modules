@@ -63,6 +63,9 @@ public class HomePage extends ApplicationPageBase {
         String text = getText(newepisodes,"New Episodes ");
         return text;
     }
+
+
+    public int id(){}
     public String latestBar(){
         String text = getText(latestbar,"Latest");
         return text;
