@@ -25,14 +25,15 @@ WebElement Fblogoimg;
 //for initializing when object will be created
 public Signup(){PageFactory.initElements(driver,this);}
     //Methods
-    public void signup(){
+    public void signup() throws InterruptedException {
         firstname.sendKeys("Mohammed", Keys.TAB,"Mehadi",Keys.TAB, "Email",Keys.TAB,"password",
                            Keys.TAB,Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB,Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB,
-                           Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB,Keys.TAB,Keys.ARROW_RIGHT,Keys.ENTER);}
+                           Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB,Keys.TAB,Keys.ARROW_RIGHT,Keys.ENTER);
+                           Thread.sleep(1000);
+}
     public void login() throws InterruptedException {
     useremail.sendKeys("selenium925@gmail.com");
-    password.sendKeys("(qazxsw)1234");
-    button.click();
+    password.sendKeys("(qazxsw)1234",Keys.ENTER);
     Thread.sleep(1000);
     }
     public String validateLoginPageTitle(){
