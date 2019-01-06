@@ -66,5 +66,37 @@ public class TestHomePage extends CommonAPI {
     public void morepage(){
         homePage.moresearch();
     }
+    @Test(priority = 13)
+    public void giftcardspage(){
+        homePage.giftcardsearch();
+    }
+    @Test(priority = 14)
+    public void helpcotactpage(){
+        homePage.helpcontactsearch();
+    }
+    @Test(priority = 15)
+    public void sellpage(){
+        homePage.sellSearch();
+    }
+    @Test(priority = 16)
+    public void myebaypage(){
+        homePage.myebaytab();
+    }
+    @Test(priority = 17)
+    public void shoppingcartpage(){
+        homePage.shoppingcartsearch();
+    }
+    @Test(priority = 18)
+    public void businesspage() {
+        homePage.businesssearch();
+    }
+    @Test(priority = 19)
+    public void shopcategorypage(){
+        homePage.shopbycategorysearch();
+    }
+    @Test(priority = 20)
+    public void allcategorypage(){
+        homePage.allcategorysearch();
+    }
 }
 

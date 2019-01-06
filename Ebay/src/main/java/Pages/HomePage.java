@@ -110,7 +110,49 @@ public class HomePage extends CommonAPI {
     public void moresearch(){
         more.click();
     }
-}
+    @FindBy(xpath = "//*[@id=\"gh-p-4\"]/a")
+    WebElement giftcards;
+    public void giftcardsearch(){
+        giftcards.click();
+    }
+    @FindBy(xpath = "//*[@id=\"gh-p-3\"]/a")
+    WebElement helpandcontact;
+    public void helpcontactsearch(){
+        helpandcontact.click();
+    }
+    @FindBy(xpath = "//*[@id=\"gh-p-2\"]/a")
+    WebElement sell;
+    public void sellSearch(){
+        sell.click();
+    }
+    @FindBy(xpath = "//*[@id=\"gh-eb-My\"]/div/a[1]")
+    WebElement myebay;
+    public void myebaytab(){
+        myebay.click();
+    }
+    @FindBy(css = "#gh-cart-i")
+    WebElement shoppingcart;
+    public void shoppingcartsearch(){
+        shoppingcart.click();
+    }
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[10]/a")
+    WebElement businessandindustril;
+    public void businesssearch(){
+        businessandindustril.click();
+    }
+    @FindBy(css = "#gh-shop-a")
+    WebElement shopbycategory;
+    public void shopbycategorysearch(){
+        shopbycategory.click();
+    }
+    @FindBy(css = "#gh-cat")
+    WebElement allcategory;
+    public void allcategorysearch(){
+        allcategory.click();
+    }
+
+    }
+
 
 
 
