@@ -147,4 +147,6 @@ public class CommonAPI {
             System.out.println("Exception while taking screenshot "+e.getMessage());;
         }
     }
+
 }
+
