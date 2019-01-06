@@ -98,5 +98,29 @@ public class TestHomePage extends CommonAPI {
     public void allcategorypage(){
         homePage.allcategorysearch();
     }
+    @Test(priority = 21)
+    public void advancetab(){
+        homePage.advancesearch();
+    }
+    @Test(priority = 22)
+    public void bellbuttontab(){
+        homePage.bellbuttonsearch();
+    }
+    @Test(priority = 23)
+    public void buybutton(){
+        homePage.buysearch();
+    }
+    @Test(priority = 23)
+    public void sellbutton() {
+        homePage.sellSearch();
+    }
+    @Test(priority = 24)
+    public void communitypage() {
+        homePage.communitysearch();
+    }
+    @Test(priority = 25)
+    public void useragreementtab() {
+        homePage.useragreementsearch();
+    }
 }
 
