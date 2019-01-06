@@ -3,6 +3,7 @@ package Test;
 import Pages.HomePage;
 import base.CommonAPI;
 import com.relevantcodes.extentreports.ExtentReports;
+import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import report.ExtentManager;
@@ -44,6 +45,26 @@ public class TestHomePage extends CommonAPI {
     @Test(priority = 7)
     public void electronicstab() {
         homePage.electronicstab();
+    }
+    @Test(priority = 8)
+    public void collectiblesarttab(){
+        homePage.collectiblesarttab();
+    }
+    @Test(priority = 9)
+    public void homeandgardentab(){
+        homePage.homegardentab();
+    }
+    @Test(priority = 10)
+    public void sportinggoods(){
+        homePage.sportinggoodsTest();
+    }
+    @Test(priority = 11)
+    public void toysearch(){
+        homePage.toytab();
+    }
+    @Test(priority = 12)
+    public void morepage(){
+        homePage.moresearch();
     }
 }
 

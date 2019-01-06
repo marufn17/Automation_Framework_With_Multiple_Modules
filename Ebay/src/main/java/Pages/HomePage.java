@@ -78,6 +78,38 @@ public class HomePage extends CommonAPI {
         electronics.click();
 
     }
+
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a")
+
+    WebElement collectiblesart;
+
+    public void collectiblesarttab(){
+        collectiblesart.click();
+    }
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a")
+
+    WebElement homeandgarden;
+
+    public void homegardentab(){
+        homeandgarden.click();
+    }
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[7]/a")
+
+    WebElement sportinggoods;
+
+    public void sportinggoodsTest(){
+        sportinggoods.click();
+    }
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[9]/a")
+    WebElement toy;
+    public void toytab(){
+        toy.click();
+    }
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[14]/span")
+    WebElement more;
+    public void moresearch(){
+        more.click();
+    }
 }
 
 
