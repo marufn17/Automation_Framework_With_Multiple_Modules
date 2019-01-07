@@ -18,5 +18,9 @@ public class TestFooterPage extends ApplicationPageBase {
         boolean logo = footerPage.isFooterLogoDisplayd();
         Assert.assertEquals(logo,true);
     }
+    @Test
+    public void tabNameTest(){
+        System.out.println(footerPage.webElementList());
+    }
 
 }
