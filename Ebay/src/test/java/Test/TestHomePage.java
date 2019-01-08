@@ -144,13 +144,15 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test(priority = 25)
-    public void useragreementtab() {
+    public void useragreementtab() throws InterruptedException {
         homePage.useragreementsearch();
+        Thread.sleep(2000);
     }
-    @Test
-    public void hompagelogotab() {
+    @Test(priority = 26)
+    public void hompagelogotab() throws InterruptedException {
         boolean logo = HomePage.homepagelogotest();
         Assert.assertEquals(logo, true);
+        Thread.sleep(3000);
     }
    }
 

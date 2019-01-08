@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>generic</artifactId>
-
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
@@ -92,5 +91,4 @@
             <artifactId>json-simple</artifactId>
         </dependency>
     </dependencies>
-
 </project>
