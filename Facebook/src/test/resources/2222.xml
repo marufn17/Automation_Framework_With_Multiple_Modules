@@ -6,7 +6,7 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.facebook.com"/>
 
-    <test name = "TestSignup">
+    <test name = "Tests">
         <parameter name="os" value="mac"/>
         <parameter name="browser" value="chrome"/>
         <parameter name="url" value="https://www.facebook.com"/>
@@ -15,5 +15,4 @@
             <class name="NewsFeedPageTest"/>
         </classes>
     </test>
-
 </suite>

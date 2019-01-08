@@ -1,8 +1,5 @@
-package Utility;
+package HelperClasses;
 
-
-import java.io.FileInputStream;
-import java.util.Calendar;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
@@ -10,6 +7,9 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.util.Calendar;
 
 public class Xls_Reader {
     //public static String filename = /Users/mohammedmehadi/Desktop/TheGroupeFramework/AutomationP1/generic/DataProvider/FacebookSearch.xlsx";

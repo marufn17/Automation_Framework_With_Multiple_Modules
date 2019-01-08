@@ -1,6 +1,6 @@
 package Pages;
 
-import Utility.Xls_Reader;
+import HelperClasses.Xls_Reader;
 import base.CommonAPI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class NewsFeedPage extends CommonAPI {
 
     //Actions/Methods
     //Search Using data from xlsx file
-    Xls_Reader xlreader = new Xls_Reader("/Users/mohammedmehadi/Desktop/TheGroupeFramework/AutomationP1/generic/DataProvider/FacebookSearch.xlsx");
+    Xls_Reader xlreader = new Xls_Reader("/Users/mohammedmehadi/Desktop/TheGroupeFramework/AutomationP1/Facebook/DataProvider/FacebookSearch.xlsx");
     public void xltoSearchBar () throws InterruptedException {
         int rowcount = xlreader.getRowCount("Cars");
         for (int rowNum = 2;rowNum <= rowcount;rowNum++){
