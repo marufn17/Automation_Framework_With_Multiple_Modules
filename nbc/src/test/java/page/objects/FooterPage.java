@@ -1,11 +1,13 @@
 package page.objects;
 
 import application.page.base.ApplicationPageBase;
+import application.page.base.XlsxDataReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.lang.invoke.CallSite;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,5 +84,14 @@ public class FooterPage extends ApplicationPageBase {
             list.add(webElements.get(i).getText());
         }
         return list;
+    }
+    public Object[][] getTestData() throws Exception{
+        File filepath = new File(System.getProperty("user.dir") + "/testData/FooterLinkName.xlsx");
+        XlsxDataReader dr = new XlsxDataReader();
+        //Show me where is data file
+        dr.setExcelFile(filepath.getAbsolutePath());
+        String[][] data = dr.getExcelSheetData("Sheet1");
+        System.out.println(data);
+        return data;
     }
 }

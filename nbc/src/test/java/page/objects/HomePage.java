@@ -88,8 +88,26 @@ public class HomePage extends ApplicationPageBase {
         List<String> list = new ArrayList<>();
         for (int i =0; i<webElements.size(); i++){
             list.add(webElements.get(i).getText());
+            System.out.println(webElements.get(i).getText());
         }
         return list;
+    }
+    public List spellcheckHomePageExpected(){
+        List<String> expected = new ArrayList<>();
+        expected.add("POPULAR SHOWS");
+        expected.add("NEW EPISODES");
+        expected.add("LATEST CLIPS");
+        expected.add("WATCH FULL SEASONS");
+        expected.add("TRENDING NOW");
+        expected.add("SHOWS");
+        expected.add("EPISODES");
+        expected.add("SCHEDULE");
+        expected.add("NEWS & SPORTS");
+        expected.add("SHOP");
+        expected.add("APP");
+        expected.add("LIVE");
+        expected.add("SIGN UP");
+        return expected;
     }
     public String checkSearchTab(){
         searchTab.click();

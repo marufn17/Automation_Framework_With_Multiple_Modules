@@ -34,22 +34,9 @@ public class TestHomePage extends ApplicationPageBase {
     }
     @Test
     public void tabNameCheckHomePage(){
-        List<String> expected = new ArrayList<>();
-        expected.add("POPULAR SHOWS");
-        expected.add("NEW EPISODES");
-        expected.add("GOLDEN GLOBES HIGHLIGHTS");
-        expected.add("WATCH FULL SEASONS");
-        expected.add("TRENDING NOW");
-        expected.add("SHOWS");
-        expected.add("EPISODES");
-        expected.add("SCHEDULE");
-        expected.add("NEWS & SPORTS");
-        expected.add("SHOP");
-        expected.add("APP");
-        expected.add("LIVE");
-        expected.add("SIGN UP");
+        List<String> expected = homePage.spellcheckHomePageExpected();
         List<String> actual = homePage.spellCheckHomePage();
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(actual,expected);
     }
     @Test
     public void clickSearch(){
