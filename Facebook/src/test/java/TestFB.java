@@ -11,20 +11,20 @@ public class TestFB extends CommonAPI {
     @BeforeMethod
             public void init(){
      Singnupob = new Signup() ;}
-    @Test(priority = 1)
-    public void Signuptest(){
+    @Test
+    public void Signuptest() throws InterruptedException {
         Singnupob.signup();
     }
-    @Test(priority = 2)
+    @Test
     public void login() throws InterruptedException {
         Singnupob.login();
     }
-    @Test(priority = 3)
+    @Test
     public void loginPageTitleTest(){
      String  title = Singnupob.validateLoginPageTitle();
         Assert.assertEquals(title,"Facebook - Log In or Sign Up");
     }
-    @Test(priority = 4)
+    @Test
     public void loginPageLogoTest(){
         boolean original = Singnupob.validateLogoimg();
         Assert.assertTrue(original);

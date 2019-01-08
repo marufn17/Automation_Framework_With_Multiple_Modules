@@ -38,6 +38,12 @@ public Signup(){PageFactory.initElements(driver,this);}
     }
     public String validateLoginPageTitle(){
     return driver.getTitle();}
+
     public boolean validateLogoimg(){
     return Fblogoimg.isDisplayed(); }
+
+    public NewsFeedPage gotonewsfeedpage() throws InterruptedException {
+    login();
+    return new NewsFeedPage();
+     }
 }
