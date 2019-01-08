@@ -4,6 +4,7 @@ import base.CommonAPI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends CommonAPI {
@@ -200,19 +201,30 @@ public class HomePage extends CommonAPI {
     public void sellsearch() {
         sell.click();
     }
+
     @FindBy(xpath = "//*[@id=\"gf-BIG\"]/table/tbody/tr/td[5]/ul/li[6]/h3/a")
     WebElement community;
 
     public void communitysearch() {
         community.click();
     }
+
     @FindBy(xpath = "//*[@id=\"gf-t-box\"]/table/tbody/tr[2]/td[1]/a[2]")
     WebElement useragreement;
 
     public void useragreementsearch() {
         useragreement.click();
     }
-}
+    @FindBy(xpath = "//*[@id=\"gh-logo\"]")
+
+    static WebElement homepagelogo;
+
+    public static boolean homepagelogotest() {
+        boolean logo = homepagelogo.isDisplayed();
+        return logo;
+    }
+    }
+
 
 
 
