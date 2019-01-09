@@ -33,7 +33,7 @@
                 <version>2.21.0</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suitexmlFile>/Users/mohammedmehadi/Desktop/GroupFramework/AutomationP1/Facebook/target/test-classes/FacebookTestRunner.xml</suitexmlFile>
+                        <suiteXmlFiles>/Users/mohammedmehadi/Desktop/FrameworkTeam/AutomationP1/Facebook/src/test/resources/TestRunner.xml</suiteXmlFiles>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
