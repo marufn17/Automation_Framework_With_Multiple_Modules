@@ -25,7 +25,7 @@ public class TestFooterPage extends ApplicationPageBase {
         Assert.assertEquals(logo,true);
     }
     @Test
-    public void webElementName(){
+    public void webElementName(){// data driven test, using data from excel sheets
         List actual = footerPage.webElementList();
         List expected = footerPage.expectedWebElement();
         Assert.assertEquals(actual,expected);

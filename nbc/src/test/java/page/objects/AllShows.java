@@ -25,6 +25,19 @@ public class AllShows extends ApplicationPageBase {
     WebElement access;
     @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[6]/article/div[2]/div[1]")
     WebElement amazingStories;
+    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[2]/section/div/div[2]/a[1]/article/div[2]/div[1]")
+    WebElement capbio;
+    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[2]/section/div/div[2]/a[2]/article/div[2]/div[1]")
+    WebElement caccess;
+    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[2]/section/div/div[2]/a[3]/article/div[2]/div[1]")
+    WebElement camericagot;
+    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[2]/section/div/div[2]/a[4]/article/div[2]/div[1]")
+    WebElement cAmricaNinja;
+    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[2]/section/div/div[2]/a[5]/article/div[2]/div[1]")
+    WebElement cbetter;
+    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[2]/section/div/div[2]/a[6]/article/div[2]/div[1]")
+    WebElement cTheblack;
+
     public String allShpows(){
         allShows.click();
         all.click();
@@ -41,7 +54,6 @@ public class AllShows extends ApplicationPageBase {
         webElements.add(abby);
         webElements.add(access);
         webElements.add(amazingStories);
-
         List<String > text = new ArrayList<>();
         for(int i = 0; i<webElements.size();i++){
             text.add(webElements.get(i).getText());
