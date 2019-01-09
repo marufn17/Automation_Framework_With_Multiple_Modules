@@ -16,9 +16,9 @@
 
     <test name = "NBC Test Suits (Mac/Chrome)">
         <classes>
-            <class name="test.page.objects.TestHomePage"/>
+            <!--<class name="test.page.objects.TestHomePage"/>-->
             <class name="test.page.objects.TestFooterPage"/>
-            <class name="test.page.objects.TestAllShows"/>
+            <!--<class name="test.page.objects.TestAllShows"/>-->
         </classes>
     </test>
 </suite>
