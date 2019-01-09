@@ -1,15 +1,12 @@
 package page.objects;
 
 import application.page.base.ApplicationPageBase;
-import application.page.base.XlsxDataReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class AllShows extends ApplicationPageBase {
-
     @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[30]/a")
     WebElement allShows;
     @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[1]/div/ul/li[1]/a")
@@ -28,11 +25,6 @@ public class AllShows extends ApplicationPageBase {
     WebElement access;
     @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[6]/article/div[2]/div[1]")
     WebElement amazingStories;
-
-
-
-
-
     public String allShpows(){
         allShows.click();
         all.click();
@@ -67,8 +59,4 @@ public class AllShows extends ApplicationPageBase {
         expectedShowsName.add("Amazing Stories");
         return expectedShowsName;
     }
-
-
-
-
 }
