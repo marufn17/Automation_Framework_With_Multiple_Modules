@@ -150,6 +150,7 @@ public class HomePage extends ApplicationPageBase {
         boolean isFrameEnabled = showsFrame.isDisplayed();
         return isFrameEnabled;
     }
+    public void clickOnShows(){showstab.click();}
     public void clickOnSearch() {
         searchTab.click();
     }

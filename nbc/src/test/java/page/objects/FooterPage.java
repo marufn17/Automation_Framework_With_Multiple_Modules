@@ -83,15 +83,19 @@ public class FooterPage extends ApplicationPageBase {
         for (int i = 0; i<webElements.size();i++){
             list.add(webElements.get(i).getText());
         }
+        System.out.println(list);
         return list;
     }
-    public Object[][] getTestData() throws Exception{
-        File filepath = new File(System.getProperty("user.dir") + "/testData/FooterLinkName.xlsx");
-        XlsxDataReader dr = new XlsxDataReader();
-        //Show me where is data file
-        dr.setExcelFile(filepath.getAbsolutePath());
-        String[][] data = dr.getExcelSheetData("Sheet1");
-        System.out.println(data);
-        return data;
+    XlsxDataReader xlData = new XlsxDataReader("/Users/maruf/AllJavaProject/AutomationP1/nbc/testData/FooterLinkName.xlsx");
+    public List expectedWebElement(){
+        int rowcount = xlData.getRowCount("Sheet1");
+        List<String> expect = new ArrayList<>();
+        for(int i = 2; i <= rowcount; i++){
+            expect.add(xlData.getCellData("Sheet1","WebElementName",i));
+        }
+        System.out.println(expect);
+        return expect;
     }
+
+
 }
