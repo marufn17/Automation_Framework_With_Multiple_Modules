@@ -3,6 +3,7 @@ package Test;
 import Pages.HomePage;
 import base.CommonAPI;
 import com.relevantcodes.extentreports.ExtentReports;
+import com.sun.xml.internal.ws.policy.AssertionValidationProcessor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -20,12 +21,16 @@ public class TestHomePage extends CommonAPI {
 
     @Test(priority = 2)
     public void searchTest() {
-        homePage.searchbox();
+        String actual = homePage.searchbox();
+        String expected = "Becoming by Michelle Obama (New Hardcover Book – 2018)";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 1)
     public void searchitem() {
-        homePage.setSearchItem();
+        String actual = homePage.setSearchItem();
+        String expected = "New Kids Children TABLET PAD Educational Learning Toys Gift For Boys Girls Baby";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 3)
@@ -44,8 +49,11 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test(priority = 6)
-    public void fashiontab() {
-        homePage.fashiontab();
+    public void fashiontabbutton(){
+    homePage.fashiontab();
+    String actual = homePage.fashiontab();
+    String expected = "Your Routine, Revitalized";
+    Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 7)
@@ -152,7 +160,7 @@ public class TestHomePage extends CommonAPI {
     public void hompagelogotab() throws InterruptedException {
         boolean logo = HomePage.homepagelogotest();
         Assert.assertEquals(logo, true);
-        Thread.sleep(3000);
+
     }
    }
 
