@@ -40,6 +40,22 @@ public class HomePage extends ApplicationPageBase {
     WebElement searchTab;
     @FindBy(how = How.XPATH, xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[10]/div/a/span")
     WebElement signUPTab;
+    @FindBy(className = "search-input__input")
+    WebElement searchPageHeader;
+    @FindBy(css = "#main > div.responsive-app__wrapper > div > div > div > div > div.search-results__outer > div > div > section > div > div.section-heading > h2")
+    WebElement searchHeader;
+    @FindBy(css = "#main > div.responsive-app__wrapper > div > div > h1")
+    WebElement episodesPageHeader;
+    @FindBy(css = "#main > div.responsive-app__wrapper > div > div.page-title > h1")
+    WebElement schedulePageheader;
+    @FindBy(css = "#main > div.responsive-app__wrapper > div > div > h1")
+    WebElement appPageHeader;
+    @FindBy(css = "#main > div.responsive-app__wrapper > div > section > div.cpc-live-anvato-video-player__dialog > div > div:nth-child(2) > div > div.mvpd-dialog__title")
+    WebElement liveLinkProvider;
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[5]/div")
+    WebElement newsFrame;
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div")
+    WebElement showsFrame;
 
     public String getHomePageTitle(){
         String title = driver.getTitle();
@@ -53,7 +69,6 @@ public class HomePage extends ApplicationPageBase {
        boolean display = slideshowContainer.isDisplayed();
        return display;
     }
-
     public List spellCheckHomePage(){//to check spelling of all the tab
         List<WebElement> webElements = new ArrayList<>();
         webElements.add(popularShowTitle);
@@ -77,110 +92,76 @@ public class HomePage extends ApplicationPageBase {
         }
         return list;
     }
+    public List spellcheckHomePageExpected(){
+        List<String> expected = new ArrayList<>();
+        expected.add("POPULAR SHOWS");
+        expected.add("NEW EPISODES");
+        expected.add("LATEST CLIPS");
+        expected.add("WATCH FULL SEASONS");
+        expected.add("TRENDING NOW");
+        expected.add("SHOWS");
+        expected.add("EPISODES");
+        expected.add("SCHEDULE");
+        expected.add("NEWS & SPORTS");
+        expected.add("SHOP");
+        expected.add("APP");
+        expected.add("LIVE");
+        expected.add("SIGN UP");
+        return expected;
+    }
+    public String checkSearchTab(){
+        searchTab.click();
+        String actual =searchHeader.getText();
+        return actual;
+    }
+    public String checkEpisodesTab(){
+        episodesTab.click();
+        String text = episodesPageHeader.getText();
+        return text;
+    }
+    public String checkScheduleTab(){
+        scheduleTab.click();
+        String text = schedulePageheader.getText();
+        return text;
+    }
+    public String checkAppTab(){
+        appTab.click();
+        String text = appPageHeader.getText();
+        return text;
+    }
+    public String checkLive(){
+        liveTab.click();
+        String text = liveLinkProvider.getText();
+        return text;
+    }
+    public String checkShopTab() throws InterruptedException {
+        shopsTab.click();
+        Thread.sleep(1000);
+        String url = driver.getCurrentUrl();
+        return url;
+    }
+    public boolean newsFrame(){
+        newsAndSportsTab.click();
+        boolean isFrameEnabled = newsFrame.isDisplayed();
+        return isFrameEnabled;
+    }
+    public boolean showsFrame(){
+        showstab.click();
+        boolean isFrameEnabled = showsFrame.isDisplayed();
+        return isFrameEnabled;
+    }
+    public void clickOnShows(){showstab.click();}
+    public void clickOnSearch() {
+        searchTab.click();
+    }
+    public void clickOnEpisodes(){
+        episodesTab.click();
+    }
+    public void clickOnSchedule(){
+        scheduleTab.click();
+    }
+    public void clickOnApp(){
+        appTab.click();
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-//    public String popularShowBar(){
-//        String text = getText(popularShowTitle,"Popular Shows ");
-//        return text;
-//    }
-//    public String newEpisodesBar(){
-//        String text = getText(newepisodes,"New Episodes ");
-//        return text;
-//    }
-//    public String latestBar(){
-//        String text = getText(latestbar,"Latest");
-//        return text;
-//    }
-//    public String fullSeasonsBar(){
-//        String text = getText(fullseasons, "Full Seasons");
-//        return text;
-//    }
-//    public String trendingNowBar(){
-//        String text = getText(trendingnow, "Trending");
-//        return text;
-//    }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//    public void clickOnShows(){
-//        showstab.click();
-//    }
-//    public String clickShows(){
-//        String text = showstab.getText();
-//        return text;
-//    }
-//    public void clickOnEpisods(){
-//        episodesTab.click();
-//    }
-//    public String clickEpisods(){
-//        String actualText = episodesTab.getText();
-//        return actualText;
-//    }
-//    public void clickOnschedule(){
-//        scheduleTab.click();
-//    }
-//    public String clickSchedule(){
-//        String actualText = scheduleTab.getText();
-//        return actualText;
-//    }
-//    public void clickOnNewsAndSports(){
-//        newsAndSportsTab.click();
-//    }
-//    public String clickNewsAndSports(){
-//        String actualText = newsAndSportsTab.getText();
-//        return actualText;
-//    }
-//    public void clickOnShop(){
-//        shopsTab.click();
-//    }
-//    public String clickShops(){
-//        String actualText = shopsTab.getText();
-//        return actualText;
-//    }
-//    public void clickOnApp(){
-//        appTab.click();
-//    }
-//    public String clickApp(){
-//        String actualText = appTab.getText();
-//        return actualText;
-//    }
-//    public void clickOnLive(){
-//        liveTab.click();
-//    }
-//    public String clickLive(){
-//        String actualText = liveTab.getText();
-//        return actualText;
-//    }
-//    public void clickOnSearch(){
-//        searchTab.click();
-//    }
-//    public String clickSearch(){
-//        String actualText = searchTab.getText();
-//        return actualText;
-//    }
-//    public void clickOnSignup(){
-//        signUPTab.click();
-//    }
-//    public String clickSignup(){
-//        String actualText = signUPTab.getText();
-//        return actualText;
-//    }
 }
