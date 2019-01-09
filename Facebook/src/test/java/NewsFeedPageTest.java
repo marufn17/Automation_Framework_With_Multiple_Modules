@@ -17,6 +17,6 @@ public class NewsFeedPageTest extends CommonAPI {
     }
     @Test
     public void searchingfromxl() throws InterruptedException {
-        newsfadepage.xltoSearchBar();
+        newsfadepage.xltoSearchbar2();
     }
 }
