@@ -34,14 +34,11 @@ public class CommonAPI {
     public CommonAPI(){}
     @Parameters({"url","os","browser"})
     @BeforeMethod
-    public void setUp(@Optional("https://www.ebay.com") String url, @Optional("windows") String os, @Optional("chrome") String browser){
+    public void setUp(@Optional("https://www.nbc.com") String url, @Optional("mac") String os, @Optional("chrome") String browser){
         getDriver(os, browser);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);}
-
-    //@AfterMethod
-    public void closeDriver() throws InterruptedException{Thread.sleep(1000); driver.close();}
 
     public WebDriver getDriverIncognito(String os, String browserName){
         if(browserName.equalsIgnoreCase("chrome")){
