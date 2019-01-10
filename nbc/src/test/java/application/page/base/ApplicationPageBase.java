@@ -17,5 +17,4 @@ public class ApplicationPageBase extends CommonAPI {
         TestLogger.log("Actual text : " + webElementName);
         return actualText;
     }
-
 }
