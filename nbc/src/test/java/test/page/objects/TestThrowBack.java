@@ -15,14 +15,14 @@ public class TestThrowBack extends ApplicationPageBase {
     HomePage homePage;
     @BeforeMethod
     public void setUp(){
-        homePage = PageFactory.initElements (driver,HomePage.class);
         throwBack = PageFactory.initElements (driver,ThrowBack.class);
+        homePage = PageFactory.initElements (driver,HomePage.class);
     }
     @Test
     public void throwBackshows(){
         homePage.clickOnShows ();
-        List actual = throwBack.currentList ();
-        List expected = throwBack.expectedCurrentShows ();
+        List actual = throwBack.throwbackList ();
+        List expected = throwBack.expectedthrowbackShows ();
         Assert.assertEquals (actual,expected);
     }
 }
