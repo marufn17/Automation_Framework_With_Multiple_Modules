@@ -50,7 +50,6 @@ public class TestHomePage extends CommonAPI {
 
     @Test(priority = 6)
     public void fashiontabbutton(){
-    homePage.fashiontab();
     String actual = homePage.fashiontab();
     String expected = "Your Routine, Revitalized";
     Assert.assertEquals(actual, expected);
@@ -58,7 +57,9 @@ public class TestHomePage extends CommonAPI {
 
     @Test(priority = 7)
     public void electronicstab() {
-        homePage.electronicstab();
+    String actual = homePage.electronic();
+    String expected = "Electronics";
+    Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 8)
