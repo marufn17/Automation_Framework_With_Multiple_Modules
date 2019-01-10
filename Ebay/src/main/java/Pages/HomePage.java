@@ -62,22 +62,21 @@ public class HomePage extends CommonAPI {
     WebElement fashion;
     @FindBy(css = "#w5-bModCarousel-xCarousel-x-carousel-items > ul > li:nth-child(1) > div > a > div.b-event__footer > h3")
     WebElement fashionex;
-
     public String fashiontab(){
      fashion.click();
     String fi = fashionex.getText();
+    System.out.println(fi);
     return fi;
-}
+    }
 
     @FindBy(linkText = "Electronics")
-
-
     WebElement electronics;
-
-    public void electronicstab() {
-
-        electronics.click();
-
+    @FindBy(css = "body > div.pagecontainer.srp-main--isLarge > div.pagecontainer__top > h1 > span")
+    WebElement electornex;
+    public String electronic() {
+    electronics.click();
+     String el = electornex.getText();
+     return el;
     }
 
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a")
