@@ -25,5 +25,12 @@ public class TestSearchPage extends CommonAPI {
         List expected = searchPage.expectedSearchResult();
         Assert.assertEquals(actual,expected);
     }
+    @Test
+    public void negativeSearch(){
+        homePage.clickOnSearch();
+        String actual = searchPage.searchErrorMessage();
+         String expected = searchPage.expectedErrorMessage();
+         Assert.assertEquals(actual,expected);
+    }
 
 }
