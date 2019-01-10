@@ -7,29 +7,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllShows extends ApplicationPageBase {
-    @FindBy(xpath = "//a[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[27]/a")
+    @FindBy(xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[27]/a")//*[@id="app"]/div/header/div/div/nav/div/ul/li[2]/div/ul/li[27]/a
     WebElement allShows;
-    @FindBy(xpath = "//a[@id=\'main\']/div[1]/div/section/section/div[1]/div/ul/li[1]/a")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[1]/div/ul/li[1]/a")
     WebElement all;
-    @FindBy(xpath = "//h2[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[1]/h2")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[1]/h2")
     WebElement allHeader;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[2]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[2]/article/div[2]/div[1]")
     WebElement apBio;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[3]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[3]/article/div[2]/div[1]")
     WebElement abba;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[4]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[4]/article/div[2]/div[1]")
     WebElement abby;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[5]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[5]/article/div[2]/div[1]")
     WebElement access;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[6]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[6]/article/div[2]/div[1]")
     WebElement amazingStories;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[7]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[7]/article/div[2]/div[1]")
     WebElement camericagot;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[8]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[8]/article/div[2]/div[1]")
     WebElement cAmricaNinja;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[11]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[11]/article/div[2]/div[1]")
     WebElement cbetter;
-    @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[14]/article/div[2]/div[1]")
+    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[14]/article/div[2]/div[1]")
     WebElement cTheblack;
 
     public String allShpows(){
