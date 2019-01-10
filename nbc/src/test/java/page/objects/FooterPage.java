@@ -108,7 +108,7 @@ public class FooterPage extends ApplicationPageBase {
         System.out.println(expect);
         return expect;
     }
-    public String fbIcon() throws InterruptedException {
+    public String fbIcon() throws InterruptedException {//new tab hand
         fbicon.click();
         Thread.sleep(3000);
         System.out.println (driver.getTitle ());
