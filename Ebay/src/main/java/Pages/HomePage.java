@@ -1,11 +1,13 @@
 package Pages;
 
 import base.CommonAPI;
+import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import java.security.SecureRandom;
 
 public class HomePage extends CommonAPI {
     public HomePage() {
@@ -14,39 +16,38 @@ public class HomePage extends CommonAPI {
 
     @FindBy(id = "gh-ac")
     WebElement searchbox;
+    @FindBy(css = "#srp-river-results-listing1 > div > div.s-item__info.clearfix > a > h3")
+    WebElement booksitems;
 
-    public void searchbox() {
+    public String searchbox() {
         searchbox.sendKeys("Books", Keys.ENTER);
+        String books = booksitems.getText();
+        return books;
     }
 
     @FindBy(xpath = "//a[contains(text(),'register')]")
-
     WebElement createacct;
 
     public void createacct() {
-
         createacct.click();
     }
 
     @FindBy(id = "gh-ac")
-
     WebElement searchItem;
+    @FindBy(xpath = "//*[@id=\'srp-river-results-listing1\']/div/div[2]/a/h3")
+    WebElement toysItem;
 
-    public void setSearchItem() {
-        searchItem.sendKeys("Toys");
-        searchItem.click();
-
+    public String setSearchItem() {
+        searchItem.sendKeys("Toys", Keys.ENTER);
+        String item = toysItem.getText();
+        return item;
     }
 
     @FindBy(linkText = "Motors")
-
     WebElement searchMotortab;
 
     public void motortab() {
-
         searchMotortab.click();
-
-
     }
 
     @FindBy(xpath = "//a[contains(text(),'register')]")
@@ -55,29 +56,27 @@ public class HomePage extends CommonAPI {
 
     public void dailydealstab() {
         dailydeals.click();
-
     }
 
     @FindBy(linkText = "Fashion")
-
-
     WebElement fashion;
-
-    public void fashiontab() {
-
-        fashion.click();
-
+    @FindBy(css = "#w5-bModCarousel-xCarousel-x-carousel-items > ul > li:nth-child(1) > div > a > div.b-event__footer > h3")
+    WebElement fashionex;
+    public String fashiontab(){
+     fashion.click();
+    String fi = fashionex.getText();
+    System.out.println(fi);
+    return fi;
     }
 
     @FindBy(linkText = "Electronics")
-
-
     WebElement electronics;
-
-    public void electronicstab() {
-
-        electronics.click();
-
+    @FindBy(css = "body > div.pagecontainer.srp-main--isLarge > div.pagecontainer__top > h1 > span")
+    WebElement electornex;
+    public String electronic() {
+    electronics.click();
+     String el = electornex.getText();
+     return el;
     }
 
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a")
@@ -110,7 +109,6 @@ public class HomePage extends CommonAPI {
     public void toytab() {
         toy.click();
     }
-
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[14]/span")
     WebElement more;
 
@@ -223,7 +221,7 @@ public class HomePage extends CommonAPI {
         boolean logo = homepagelogo.isDisplayed();
         return logo;
     }
-    }
+}
 
 
 
