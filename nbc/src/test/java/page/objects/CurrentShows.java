@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CurrentShows extends ApplicationPageBase {
-    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[30]/a")
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[27]/a")
     WebElement allshows;
     @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[2]/section/div/div[2]/a[1]/article/div[2]/div[1]")
     WebElement capbio;

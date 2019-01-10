@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UpComingShows extends ApplicationPageBase {
-    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[30]/a")
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[27]/a")
     WebElement allshows;
     @FindBy(xpath = "//*[@id=\'main\']/div[1]/div/section/section/div[1]/div/ul/li[3]/a")
     WebElement upcomingTab;

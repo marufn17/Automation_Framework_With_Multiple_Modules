@@ -178,7 +178,7 @@ public class HomePage extends ApplicationPageBase {
     }
     public List expectedFrameItems(){
         List<String> expected = new ArrayList<>();
-        expected.add("House");
+        expected.add("Late Night with Seth Meyers");
         expected.add("America's Got Talent");
         expected.add("The Blacklist");
         expected.add("Brooklyn Nine-Nine");
