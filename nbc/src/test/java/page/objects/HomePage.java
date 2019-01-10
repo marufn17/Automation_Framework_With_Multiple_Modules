@@ -12,17 +12,17 @@ public class HomePage extends ApplicationPageBase {
     WebElement nbclogo;
     @FindBy(how = How.CSS, css = ".slideshow__container")
     WebElement slideshowContainer;
-    @FindBy(how = How.CSS, css = ".section-heading__title")
+    @FindBy(how = How.CSS, xpath = "//main[@id=\'main\']/div[1]/div/div/section[1]/div/div[1]/h2")
     WebElement popularShowTitle;
-    @FindBy(how = How.XPATH, xpath = "//*[@id=\'main\']/div[1]/div/div/section[2]/div/div[1]/h2")
+    @FindBy(how = How.XPATH, xpath = "//main[@id=\'main\']/div[1]/div/div/section[2]/div/div[1]/h2")
     WebElement newepisodes;
-    @FindBy(how = How.XPATH, xpath = "//*[@id=\'main\']/div[1]/div/div/section[3]/div/div[1]/h2")
+    @FindBy(how = How.XPATH, xpath = "//main[@id=\'main\']/div[1]/div/div/section[3]/div/div[1]/h2")
     WebElement latestbar;
-    @FindBy(how = How.XPATH, xpath = "//*[@id=\'main\']/div[1]/div/div/section[4]/div/div[1]/h2")
+    @FindBy(how = How.XPATH, xpath = "//main[@id=\'main\']/div[1]/div/div/section[4]/div/div[1]/h2")
     WebElement fullseasons;
-    @FindBy(how = How.XPATH, xpath = "//*[@id=\'main\']/div[1]/div/div/section[5]/div/div[1]/h2")
+    @FindBy(how = How.XPATH, xpath = "//main[@id=\'main\']/div[1]/div/div/section[5]/div/div[1]/h2")
     WebElement trendingnow;
-    @FindBy(how = How.XPATH, xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/button/span")
+    @FindBy(how = How.XPATH, xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/button/span")
     WebElement showstab;
     @FindBy(how = How.CSS, css = "#app > div > header > div > div > nav > div > ul > li:nth-child(3) > a > span")
     WebElement episodesTab;
@@ -34,11 +34,11 @@ public class HomePage extends ApplicationPageBase {
     WebElement shopsTab;
     @FindBy(how = How.CSS, css = "#app > div > header > div > div > nav > div > ul > li:nth-child(7) > a > span")
     WebElement appTab;
-    @FindBy(how = How.XPATH, xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[8]/a/span")
+    @FindBy(how = How.XPATH, xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[8]/a/span")
      WebElement liveTab;
     @FindBy(how = How.CSS, css = "#app > div > header > div > div > nav > div > ul > li.navigation__item.navigation__item--search > button")
     WebElement searchTab;
-    @FindBy(how = How.XPATH, xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[10]/div/a/span")
+    @FindBy(how = How.XPATH, xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[10]/div/a/span")
     WebElement signUPTab;
     @FindBy(className = "search-input__input")
     WebElement searchPageHeader;
@@ -52,10 +52,18 @@ public class HomePage extends ApplicationPageBase {
     WebElement appPageHeader;
     @FindBy(css = "#main > div.responsive-app__wrapper > div > section > div.cpc-live-anvato-video-player__dialog > div > div:nth-child(2) > div > div.mvpd-dialog__title")
     WebElement liveLinkProvider;
-    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[5]/div")
+    @FindBy(xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[5]/div")
     WebElement newsFrame;
-    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div")
+    @FindBy(xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div")
     WebElement showsFrame;
+    @FindBy(xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[13]/a")
+    WebElement housetab;
+    @FindBy(xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[1]/a")
+    WebElement americagot;
+    @FindBy(xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[2]/a")
+    WebElement blacklist;
+    @FindBy(xpath = "//div[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[4]/a")
+    WebElement brooklyn;
 
     public String getHomePageTitle(){
         String title = driver.getTitle();
@@ -64,6 +72,10 @@ public class HomePage extends ApplicationPageBase {
     public boolean nbcLogo(){
         boolean display = nbclogo.isDisplayed();
         return display;
+    }
+    public boolean logoEnabled(){
+        boolean enabled = nbclogo.isEnabled ();
+        return enabled;
     }
     public boolean SlideshowContainerDisplay(){
        boolean display = slideshowContainer.isDisplayed();
@@ -147,8 +159,46 @@ public class HomePage extends ApplicationPageBase {
     }
     public boolean showsFrame(){
         showstab.click();
-        boolean isFrameEnabled = showsFrame.isDisplayed();
+        boolean isFrameEnabled = showsFrame.isDisplayed ();
         return isFrameEnabled;
+    }
+    public List showFrameItems(){
+        showstab.click ();
+        List<WebElement> list = new ArrayList<> ();
+        list.add (housetab);
+        list.add (americagot);
+        list.add (blacklist);
+        list.add (brooklyn);
+        List<String> items = new ArrayList<>();
+        for (int i =0; i<list.size(); i++){
+            items.add(list.get(i).getText());
+            System.out.println(list.get(i).getText());
+        }
+        return items;
+    }
+    public List expectedFrameItems(){
+        List<String> expected = new ArrayList<>();
+        expected.add("Late Night with Seth Meyers");
+        expected.add("America's Got Talent");
+        expected.add("The Blacklist");
+        expected.add("Brooklyn Nine-Nine");
+        return expected;
+    }
+    public boolean houseShow(){
+        boolean enabled = housetab.isEnabled ();
+        return enabled;
+    }
+    public boolean agtShow(){
+        boolean enabled = americagot.isEnabled ();
+        return enabled;
+    }
+    public boolean blacklistShow(){
+        boolean enabled = blacklist.isEnabled ();
+        return enabled;
+    }
+    public boolean brooklynShow(){
+        boolean enabled = brooklyn.isEnabled ();
+        return enabled;
     }
     public void clickOnShows(){showstab.click();}
     public void clickOnSearch() {

@@ -25,10 +25,11 @@ public class TestAllShows extends ApplicationPageBase {
         Assert.assertEquals(actual,"ALL");
     }
     @Test
-    public void allShowsTitle(){
+    public void allShowsTitle(){//Using data from array list
         homePage.clickOnShows();
         List actual = allShows.list();
         List expected = allShows.expectedAllShows();
         Assert.assertEquals(actual,expected);
     }
+
 }
