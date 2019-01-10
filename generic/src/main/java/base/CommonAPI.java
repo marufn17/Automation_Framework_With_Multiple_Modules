@@ -38,6 +38,7 @@ public class CommonAPI {
         getDriver(os, browser);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+        driver.manage ().window ().fullscreen ();
         driver.get(url);}
 
     public WebDriver getDriverIncognito(String os, String browserName){

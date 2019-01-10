@@ -56,6 +56,14 @@ public class HomePage extends ApplicationPageBase {
     WebElement newsFrame;
     @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div")
     WebElement showsFrame;
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[13]/a")
+    WebElement housetab;
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[1]/a")
+    WebElement americagot;
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[2]/a")
+    WebElement blacklist;
+    @FindBy(xpath = "//*[@id=\'app\']/div/header/div/div/nav/div/ul/li[2]/div/ul/li[4]/a")
+    WebElement brooklyn;
 
     public String getHomePageTitle(){
         String title = driver.getTitle();
@@ -64,6 +72,10 @@ public class HomePage extends ApplicationPageBase {
     public boolean nbcLogo(){
         boolean display = nbclogo.isDisplayed();
         return display;
+    }
+    public boolean logoEnabled(){
+        boolean enabled = nbclogo.isEnabled ();
+        return enabled;
     }
     public boolean SlideshowContainerDisplay(){
        boolean display = slideshowContainer.isDisplayed();
@@ -147,8 +159,46 @@ public class HomePage extends ApplicationPageBase {
     }
     public boolean showsFrame(){
         showstab.click();
-        boolean isFrameEnabled = showsFrame.isDisplayed();
+        boolean isFrameEnabled = showsFrame.isDisplayed ();
         return isFrameEnabled;
+    }
+    public List showFrameItems(){
+        showstab.click ();
+        List<WebElement> list = new ArrayList<> ();
+        list.add (housetab);
+        list.add (americagot);
+        list.add (blacklist);
+        list.add (brooklyn);
+        List<String> items = new ArrayList<>();
+        for (int i =0; i<list.size(); i++){
+            items.add(list.get(i).getText());
+            System.out.println(list.get(i).getText());
+        }
+        return items;
+    }
+    public List expectedFrameItems(){
+        List<String> expected = new ArrayList<>();
+        expected.add("House");
+        expected.add("America's Got Talent");
+        expected.add("The Blacklist");
+        expected.add("Brooklyn Nine-Nine");
+        return expected;
+    }
+    public boolean houseShow(){
+        boolean enabled = housetab.isEnabled ();
+        return enabled;
+    }
+    public boolean agtShow(){
+        boolean enabled = americagot.isEnabled ();
+        return enabled;
+    }
+    public boolean blacklistShow(){
+        boolean enabled = blacklist.isEnabled ();
+        return enabled;
+    }
+    public boolean brooklynShow(){
+        boolean enabled = brooklyn.isEnabled ();
+        return enabled;
     }
     public void clickOnShows(){showstab.click();}
     public void clickOnSearch() {

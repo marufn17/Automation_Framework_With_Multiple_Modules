@@ -25,12 +25,17 @@ public class TestHomePage extends ApplicationPageBase {
     @Test
     public void logoDisplayTest(){
         boolean display = homePage.nbcLogo();
-        Assert.assertEquals(display,true);
+        Assert.assertTrue (display);
+    }
+    @Test
+    public void logoEnabled(){
+        boolean actual = homePage.logoEnabled ();
+        Assert.assertTrue (actual);
     }
     @Test
     public void slideShowContainerTest(){
         boolean display = homePage.SlideshowContainerDisplay();
-        Assert.assertEquals(display,true);
+        Assert.assertTrue (display);
     }
     @Test
     public void tabNameCheckHomePage(){
@@ -71,11 +76,37 @@ public class TestHomePage extends ApplicationPageBase {
     @Test
     public void clickNewsAndSports(){
         boolean actual = homePage.newsFrame();
-        Assert.assertEquals(actual,true);
+        Assert.assertTrue (actual);
     }
     @Test
     public void clickShows(){
         boolean actual = homePage.showsFrame();
-        Assert.assertEquals(actual,true);
+        Assert.assertTrue (actual);
+    }
+    @Test
+    public void showFrameItems(){
+        List actual = homePage.showFrameItems ();
+        List expected = homePage.expectedFrameItems ();
+        Assert.assertEquals (actual,expected);
+    }
+    @Test
+    public void houseShow(){
+        boolean actual = homePage.houseShow ();
+        Assert.assertTrue (actual);
+    }
+    @Test
+    public void agtShow(){
+        boolean actual = homePage.agtShow ();
+        Assert.assertTrue (actual);
+    }
+    @Test
+    public void blacklistShow(){
+        boolean actual = homePage.blacklistShow ();
+        Assert.assertTrue (actual);
+    }
+    @Test
+    public void brooklynShow(){
+        boolean actual = homePage.brooklynShow ();
+        Assert.assertTrue (actual);
     }
 }
