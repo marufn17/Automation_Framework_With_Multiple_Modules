@@ -16,25 +16,15 @@ public class ConnectToSqlDB {
     public static ResultSet resultSet = null;
     public static ResultSet resultSet2 = null;
 
-    public static Properties loadProperties() throws IOException{
-        Properties prop = new Properties();
-        InputStream ism = new FileInputStream("src/secret.properties");
-        prop.load(ism);
-        ism.close();
-        return prop;
-    }
-    public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException {
-        Properties prop = loadProperties();
-        String driverClass = prop.getProperty("MYSQLJDBC.driver");
-        String url = prop.getProperty("MYSQLJDBC.url");
-        String userName = prop.getProperty("MYSQLJDBC.userName");
-        String password = prop.getProperty("MYSQLJDBC.password");
-        Class.forName(driverClass);
+    public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        String url = "jdbc:mysql://localhost:3306/maruf?useSSL=false&allowPublicKeyRetrieval=true";
+        String userName = "root";
+        String password = "12345";
         connect = DriverManager.getConnection(url,userName,password);
         System.out.println("Database is connected");
         return connect;
     }
-    public void createTableFromStringToMySql(String tableName, String columnName) {
+    public void createTableFromStringToMySql(String tableName, String columnName) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `" + tableName + "`;");
@@ -49,7 +39,7 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
-    public void createTableFromStringToMySql2(String tableName, String columnName1,String columnName2){
+    public void createTableFromStringToMySql2(String tableName, String columnName1,String columnName2) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
@@ -124,8 +114,7 @@ public class ConnectToSqlDB {
         }
         return dataList;
     }
-    public void insertDataFromArrayToSqlTable(int [] ArrayData, String tableName, String columnName)
-    {
+    public void insertDataFromArrayToSqlTable(int [] ArrayData, String tableName, String columnName) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
@@ -146,8 +135,7 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
-    public void insertDataFromStringToSqlTable(String ArrayData, String tableName, String columnName)
-    {
+    public void insertDataFromStringToSqlTable(String ArrayData, String tableName, String columnName) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
@@ -176,8 +164,7 @@ public class ConnectToSqlDB {
         }
         return data;
     }
-    public void InsertDataFromArrayListToMySql2(List<String> list,String tableName, String columnName1,String columnName2 )
-    {
+    public void InsertDataFromArrayListToMySql2(List<String> list,String tableName, String columnName1,String columnName2 ) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
             String key = list.get(0);
@@ -197,7 +184,7 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
-    public void createTableFromStringToMySql2col(String tableName, String columnName1,String columnName2){
+    public void createTableFromStringToMySql2col(String tableName, String columnName1,String columnName2) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
@@ -212,15 +199,14 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
-    public void insertDataFromArrayListToSqlTable(List<Object> list, String tableName, String columnName)
-    {
+    public void insertDataFromArrayListToSqlTable(List<String> list, String tableName, String columnName) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
             ps.executeUpdate();
             ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`"+ columnName+"` varchar(2500) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
             ps.executeUpdate();
-            for(Object ob :list){
+            for(String ob :list){
                 ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
                 ps.setObject(1,ob);
                 ps.executeUpdate();
@@ -234,8 +220,7 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
-    public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2)
-    {
+    public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
                 ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + "," + columnName2 + " ) VALUES(?,?)");
