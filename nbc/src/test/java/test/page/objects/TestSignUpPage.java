@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
 import page.objects.SignUpPage;
-
 import java.util.List;
 
 public class TestSignUpPage extends CommonAPI {
@@ -43,5 +42,4 @@ public class TestSignUpPage extends CommonAPI {
         String expected = "Please check the box to continue.";
         Assert.assertEquals(actual,expected);
     }
-
 }

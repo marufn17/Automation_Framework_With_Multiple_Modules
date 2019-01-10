@@ -70,7 +70,6 @@ public class FooterPage extends ApplicationPageBase {
         boolean logo = footerLogo.isDisplayed();
         return logo;
     }
-
     public List webElementList(){
         List<WebElement> webElements = new ArrayList<>();
         webElements.add(shareMsg);

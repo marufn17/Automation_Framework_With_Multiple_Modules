@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
 import page.objects.SearchPage;
-
 import java.util.List;
 
 public class TestSearchPage extends CommonAPI {
@@ -32,5 +31,4 @@ public class TestSearchPage extends CommonAPI {
          String expected = searchPage.expectedErrorMessage();
          Assert.assertEquals(actual,expected);
     }
-
 }

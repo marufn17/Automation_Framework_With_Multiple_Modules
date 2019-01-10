@@ -1,11 +1,8 @@
 package page.objects;
 
 import base.CommonAPI;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.net.PortUnreachableException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,5 +65,4 @@ public class SignUpPage extends CommonAPI {
         String text = tickError.getText();
         return text;
     }
-
 }

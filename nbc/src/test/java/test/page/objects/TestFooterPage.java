@@ -1,16 +1,11 @@
 package test.page.objects;
 
 import application.page.base.ApplicationPageBase;
-import application.page.base.XlsxDataReader;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import page.objects.FooterPage;
-
-import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestFooterPage extends ApplicationPageBase {
@@ -102,5 +97,4 @@ public class TestFooterPage extends ApplicationPageBase {
         String expected = "https://www.nbc.com/general/pages/accessibility";
         Assert.assertEquals (actual,expected);
     }
-
 }

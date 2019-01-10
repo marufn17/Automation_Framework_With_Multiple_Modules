@@ -214,5 +214,4 @@ public class HomePage extends ApplicationPageBase {
         appTab.click();
     }
     public void clickOnSignUp(){signUPTab.click();}
-
 }
