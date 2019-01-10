@@ -54,7 +54,9 @@ public class XlsxDataReader {
 			}
 		}
 		return mydata;
-	} //// end of getexcel sheet data
+	} // end of getexcel sheet data// mr. Jahid
+
+
 	public String path;
 	public FileInputStream fis = null;
 	private XSSFWorkbook workbook = null;
@@ -142,6 +144,4 @@ public class XlsxDataReader {
 			return "row " + rowNum + " or column " + colName + " does not exist in xls";
 		}
 	}
-
-
 } // end of class
