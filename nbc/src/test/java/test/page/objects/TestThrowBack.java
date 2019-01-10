@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
 import page.objects.ThrowBack;
-
 import java.util.List;
 
 public class TestThrowBack extends ApplicationPageBase {

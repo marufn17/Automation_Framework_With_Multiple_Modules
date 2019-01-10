@@ -94,7 +94,6 @@ public class GoogleSheetReader {
      * We can use it with @DataProvider annotations
      *
      * */
-
     public static String[][] getSpreadSheetRecordsToSupplyDataProvider(String spreadsheetId, String range) throws IOException {
         // Build a new authorized API client service.
 
@@ -106,7 +105,6 @@ public class GoogleSheetReader {
             List<Object> row = getSpreadSheetRecords.get(i);
             array[i] = row.toArray(new String[row.size()]);
         }
-
         return array;
     }
     /**
