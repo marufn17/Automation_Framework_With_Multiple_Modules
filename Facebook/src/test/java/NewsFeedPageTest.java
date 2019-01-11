@@ -6,6 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class NewsFeedPageTest extends CommonAPI {
     Signup signuppage;
     NewsFeedPage newsfadepage;
@@ -15,6 +18,7 @@ public class NewsFeedPageTest extends CommonAPI {
        newsfadepage= new NewsFeedPage();
        signuppage = new Signup();
        newsfadepage = signuppage.gotonewsfeedpage();
+
 
     }
     @Test
@@ -48,7 +52,8 @@ public class NewsFeedPageTest extends CommonAPI {
         newsfadepage.DeletePost();
     }
     @Test
-    public void PhotoUploadTest() throws InterruptedException {
+    public void PhotoUploadTest() throws InterruptedException, AWTException {
         newsfadepage.photoupload();
+        }
     }
-}
+

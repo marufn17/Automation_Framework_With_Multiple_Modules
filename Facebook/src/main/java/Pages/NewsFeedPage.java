@@ -5,12 +5,17 @@ import HelperClasses.Xls_Reader;
 import base.CommonAPI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
+import java.security.Key;
 
 public class NewsFeedPage extends CommonAPI {
     Actions actions = new Actions(driver);
@@ -37,7 +42,7 @@ public class NewsFeedPage extends CommonAPI {
     WebElement delete;
     @FindBy(xpath = "//button[contains(text(),'Delete')]")
     WebElement confirmdelete;
-    @FindBy(css = "._5xmp:nth-of-type(1) ._2aha")
+    @FindBy(css = "._3jk")
     WebElement photouploadbutton;
     @FindBy(xpath = "//input[@id='js_1ad']")
             WebElement inputPhoto;
@@ -47,6 +52,7 @@ public class NewsFeedPage extends CommonAPI {
     Xls_Reader xlreader = new Xls_Reader("/Users/mohammedmehadi/Desktop/MehadiBranch/AutomationP1/Facebook/DataProvider/FacebookSearch.xlsx");
 
     public void xltoSearchBar() throws InterruptedException {
+
         int rowcount = xlreader.getRowCount("Cars");
         for (int rowNum = 2; rowNum <= rowcount; rowNum++) {
             String searchItems = xlreader.getCellData("Cars", "SearchItems", rowNum);
@@ -91,7 +97,7 @@ public class NewsFeedPage extends CommonAPI {
     public boolean PostSomething() throws InterruptedException {
         actions.click(postArea).click().build().perform();
         actions.click(postArea).click().build().perform();
-        postArea.sendKeys("Status updated and will be deleted soon");
+        actions.sendKeys("Status updated and will be deleted soon").build().perform();
         postButton.click();
         Thread.sleep(5000);
         return postedText.isDisplayed();
@@ -102,18 +108,19 @@ public class NewsFeedPage extends CommonAPI {
         actions.click(threedotofpost).build().perform();
         Thread.sleep(2000);
         delete.click();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         confirmdelete.click();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
     }
     //Post a Photo
     File imgfile = new File("/Users/mohammedmehadi/Desktop/1.png");
     String imgfiledir = imgfile.getAbsolutePath();
-    public void photoupload() throws InterruptedException {
+    public void photoupload() throws InterruptedException, AWTException {
         actions.click(photouploadbutton).build().perform();
-        actions.sendKeys(photouploadbutton,imgfiledir).build().perform();
-        Thread.sleep(5000);
+        actions.click(photouploadbutton).build().perform();
     }
+
+
 
 
     //=====>Landing pages<===========
