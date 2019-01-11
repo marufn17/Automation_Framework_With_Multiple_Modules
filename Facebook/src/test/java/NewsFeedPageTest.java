@@ -1,6 +1,7 @@
 import Pages.NewsFeedPage;
 import Pages.Signup;
 import base.CommonAPI;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -31,5 +32,23 @@ public class NewsFeedPageTest extends CommonAPI {
         newsfadepage.gotoMessenger();
         String expectedpage = "https://www.facebook.com/messages/t/";
         Assert.assertEquals(newsfadepage.gotoMessenger(),expectedpage);
+    }
+    @Test
+    public void postAreaTest() throws InterruptedException {
+        Assert.assertEquals(newsfadepage.PostArea(),true);
+
+    }
+    @Test
+    public void postTest() throws InterruptedException {
+        boolean actual =newsfadepage.PostSomething();
+        Assert.assertEquals(actual,true);
+    }
+    @Test
+    public void DelpodtTest() throws InterruptedException {
+        newsfadepage.DeletePost();
+    }
+    @Test
+    public void PhotoUploadTest() throws InterruptedException {
+        newsfadepage.photoupload();
     }
 }

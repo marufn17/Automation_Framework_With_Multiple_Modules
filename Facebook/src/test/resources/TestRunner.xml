@@ -11,9 +11,10 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="url" value="https://www.facebook.com"/>
         <classes>
-            <class name="TestFB"/>
+            <!--<class name="TestFB"/>-->
             <class name="NewsFeedPageTest"/>
-            <class name="ProfilePageTest"/>
+            <!--<class name="ProfilePageTest"/>-->
+            <!--<class name="MessengerPageTest"/>-->
         </classes>
     </test>
 </suite>
