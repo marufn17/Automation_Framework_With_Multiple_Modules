@@ -1,5 +1,6 @@
 package Pages;
 
+import HelperClasses.ConnectToSqlDb;
 import HelperClasses.SimpleXlReader;
 import HelperClasses.Xls_Reader;
 import base.CommonAPI;
@@ -16,6 +17,8 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.security.Key;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewsFeedPage extends CommonAPI {
     Actions actions = new Actions(driver);
@@ -46,8 +49,38 @@ public class NewsFeedPage extends CommonAPI {
     WebElement photouploadbutton;
     @FindBy(xpath = "//input[@id='js_1ad']")
             WebElement inputPhoto;
+    @FindBy(css = "a[class=' _666h  _18vj _18vk _42ft']")
+            WebElement comment;
+    @FindBy(css = "a[class=' _6a-y _3l2t  _18vj']")
+            WebElement Like;
+
 
     //=====>Actions/Methods<=======
+    //Search Using data from MySql database
+    List<String> glist = new ArrayList<String>();
+    List<String> actual=new ArrayList<>();
+    public List<String> Expected(){
+        glist.add("Selenium Automation");
+        glist.add("Mobile Testing");
+        glist.add("Selenium Appium");
+        glist.add("Desktop App Automation");
+    return glist;
+    }
+    ConnectToSqlDb connect = new ConnectToSqlDb();
+    public List<String> searchfromdatabase() throws Exception {
+        Expected();
+        connect.createTableFromStringToMySql("Searchitems","ItemsList");
+        connect.insertDataFromArrayListToSqlTable(glist,"Searchitems","ItemsList");
+        List<String> data = connect.readDataBase("Searchitems","ItemsList");
+        for (String items:data){
+            searchbox.sendKeys(items, Keys.ENTER);
+            Thread.sleep(1000);
+            searchbox.clear();
+            actual.add(items);
+        }
+        return actual;
+    }
+
     //Search Using data from xlsx file
     Xls_Reader xlreader = new Xls_Reader("/Users/mohammedmehadi/Desktop/MehadiBranch/AutomationP1/Facebook/DataProvider/FacebookSearch.xlsx");
 
@@ -76,6 +109,7 @@ public class NewsFeedPage extends CommonAPI {
     //Click on Profile
     public String gotoprofile() throws InterruptedException {
         actions.click(profilename).build().perform();
+        Thread.sleep(1000);
         String currenturl = driver.getCurrentUrl();
         return currenturl;
     }
@@ -83,6 +117,7 @@ public class NewsFeedPage extends CommonAPI {
     //Click on messenger
     public String gotoMessenger() throws InterruptedException {
         actions.click(messenger).build().perform();
+        Thread.sleep(1000);
         String currenturl = driver.getCurrentUrl();
         return currenturl;
     }
@@ -114,11 +149,76 @@ public class NewsFeedPage extends CommonAPI {
     }
     //Post a Photo
     File imgfile = new File("/Users/mohammedmehadi/Desktop/1.png");
-    String imgfiledir = imgfile.getAbsolutePath();
     public void photoupload() throws InterruptedException, AWTException {
+        StringSelection stringSelection= new StringSelection(imgfile.getAbsolutePath());
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
         actions.click(photouploadbutton).build().perform();
         actions.click(photouploadbutton).build().perform();
+        Robot robot = new Robot();
+        Thread.sleep(1000);
+
+        robot.keyPress(KeyEvent.VK_META);
+
+        robot.keyPress(KeyEvent.VK_TAB);
+
+        robot.keyRelease(KeyEvent.VK_META);
+
+        robot.keyRelease(KeyEvent.VK_TAB);
+
+        robot.delay(500);
+
+        robot.keyPress(KeyEvent.VK_META);
+
+        robot.keyPress(KeyEvent.VK_SHIFT);
+
+        robot.keyPress(KeyEvent.VK_G);
+
+        robot.keyRelease(KeyEvent.VK_META);
+
+        robot.keyRelease(KeyEvent.VK_SHIFT);
+
+        robot.keyRelease(KeyEvent.VK_G);
+        robot.delay(500);
+
+        robot.keyPress(KeyEvent.VK_META);
+
+        robot.keyPress(KeyEvent.VK_V);
+
+        robot.keyRelease(KeyEvent.VK_META);
+
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.delay(500);
+
+        robot.keyPress(KeyEvent.VK_ENTER);
+
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
+        robot.delay(500);
+
+        robot.keyPress(KeyEvent.VK_ENTER);
+
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(5000);
+        postButton.click();
+
     }
+
+    //Comment
+    public void commentOnPost() throws InterruptedException {
+        actions.click(comment).build().perform();
+        actions.click(comment).build().perform();
+        actions.sendKeys("This is the comment").build().perform();
+        actions.sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(1000);
+    }
+    //like
+    public void likeonpost() throws InterruptedException {
+        actions.moveToElement(Like).click().build().perform();
+        actions.moveToElement(Like).click().build().perform();
+        Thread.sleep(2000);
+    }
+
+
 
 
 
