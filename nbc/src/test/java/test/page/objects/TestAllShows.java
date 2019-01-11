@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.AllShows;
 import page.objects.HomePage;
-
 import java.util.List;
 
 public class TestAllShows extends ApplicationPageBase {

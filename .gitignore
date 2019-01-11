@@ -4,5 +4,9 @@
 *.credentials
 *Extent-Report
 *screenshots
+<<<<<<< HEAD
 *.DS_Store
 
+=======
+*.DS_Store
+>>>>>>> 12f58c02bea505ed9d3f4069966ab42e915b86be
