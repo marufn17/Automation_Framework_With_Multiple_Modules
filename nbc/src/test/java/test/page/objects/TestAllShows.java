@@ -30,4 +30,5 @@ public class TestAllShows extends ApplicationPageBase {
         List expected = allShows.expectedAllShows();
         Assert.assertEquals(actual,expected);
     }
+
 }
