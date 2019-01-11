@@ -4,7 +4,8 @@ import application.page.base.ApplicationPageBase;
 import org.checkerframework.checker.nullness.compatqual.KeyForType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +54,4 @@ public class ThrowBack extends ApplicationPageBase {
         expectedShowsName.add ("The Black Donnellys");
         return expectedShowsName;
     }
-
-
 }

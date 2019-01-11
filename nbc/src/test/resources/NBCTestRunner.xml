@@ -23,6 +23,7 @@
             <class name="test.page.objects.TestUpComingShows"/>
             <class name="test.page.objects.TestThrowBack"/>
             <class name="test.page.objects.TestSearchPage"/>
+            <class name="test.page.objects.TestSignUpPage"/>
         </classes>
     </test>
 </suite>

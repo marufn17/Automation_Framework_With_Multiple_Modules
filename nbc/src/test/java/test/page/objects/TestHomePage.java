@@ -1,14 +1,11 @@
 package test.page.objects;
 
 import application.page.base.ApplicationPageBase;
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import page.objects.HomePage;
-
-import java.util.ArrayList;
+import page.objects.HomePage;;
 import java.util.List;
 
 public class TestHomePage extends ApplicationPageBase {
