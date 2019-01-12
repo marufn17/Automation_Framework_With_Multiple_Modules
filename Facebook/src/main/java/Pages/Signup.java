@@ -153,11 +153,22 @@ public Signup(){PageFactory.initElements(driver,this);}
 
 
 
-
+   //Landing pages
 
     public NewsFeedPage gotonewsfeedpage() throws InterruptedException {
     login();
     return new NewsFeedPage();}
-
+    public void gotoplacespage(){
+    footerPlaces.click();
+    }
+    public void gotopagecatagories(){
+    footerpagecatagories.click();
+    }
+    public void gotopages(){
+    footerpages.click();
+    }
+    public void gotoprofiles(){
+    footerProfiles.click();
+    }
 
 }
