@@ -33,8 +33,10 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test(priority = 3)
-    public void signinpage() {
-        homePage.createacct();
+    public void createacctpage() {
+        String actual = homePage.createaccttab();
+        String expected = "Already a member?";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 4)
