@@ -149,7 +149,7 @@ public class NewsFeedPage extends CommonAPI {
         Thread.sleep(3000);
     }
     //Post a Photo
-    File imgfile = new File("/Users/mohammedmehadi/Desktop/1.png");
+    File imgfile = new File("/Users/mohammedmehadi/Desktop/MehadiBranch/AutomationP1/Facebook/DataProvider/2.jpg");
     public void photoupload() throws InterruptedException, AWTException {
         driver.manage().window().setPosition(new org.openqa.selenium.Point(100, 50));
         actions.click(photouploadbutton).build().perform();
