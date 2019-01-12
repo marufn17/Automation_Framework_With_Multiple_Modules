@@ -3,7 +3,6 @@ package Test;
 import Pages.HomePage;
 import base.CommonAPI;
 import com.relevantcodes.extentreports.ExtentReports;
-import com.sun.xml.internal.ws.policy.AssertionValidationProcessor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -34,8 +33,10 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test(priority = 3)
-    public void signinpage() {
-        homePage.createacct();
+    public void createacctpage() {
+        String actual = homePage.createaccttab();
+        String expected = "Already a member?";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 4)
