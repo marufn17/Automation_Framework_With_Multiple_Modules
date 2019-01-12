@@ -22,77 +22,77 @@ public class NewsFeedPageTest extends CommonAPI {
 
     }
 
-    @Test(priority = 5)
+    @Test(priority = 17)
     public void searchingfromxl() throws InterruptedException {
         newsfadepage.xltoSearchbar2();
     }
 
-    @Test(priority = 6)
+    @Test(priority = 18)
     public void gotoprofiletest() throws InterruptedException {
         newsfadepage.gotoprofile();
         String expectedpage = "https://www.facebook.com/sele.nium.777";
         Assert.assertEquals(newsfadepage.gotoprofile(), expectedpage);
     }
 
-    @Test(priority = 7)
+    @Test(priority = 19)
     public void gotoMessengerpageTest() throws InterruptedException {
         newsfadepage.gotoMessenger();
         String expectedpage = "https://www.facebook.com/messages";
         Assert.assertEquals(newsfadepage.gotoMessenger(), expectedpage);
     }
 
-    @Test(priority = 8)
+    @Test(priority = 20)
     public void postAreaTest() throws InterruptedException {
         Assert.assertEquals(newsfadepage.PostArea(), true);
 
     }
 
-    @Test(priority = 9)
+    @Test(priority = 21)
     public void postTest() throws InterruptedException {
         boolean actual = newsfadepage.PostSomething();
         Assert.assertEquals(actual, true);
     }
 
-    @Test(priority = 12)
+    @Test(priority = 24)
     public void DelpodtTest() throws InterruptedException {
         newsfadepage.DeletePost();
     }
 
-    @Test(priority = 13)
+    @Test(priority = 25)
     public void PhotoUploadTest() throws InterruptedException, AWTException {
         newsfadepage.photoupload();
         Thread.sleep(5000);
     }
 
-    @Test(priority = 11)
+    @Test(priority = 23)
     public void CommentOnPostTest() throws InterruptedException {
         newsfadepage.commentOnPost();
         Thread.sleep(5000);
     }
 
-    @Test(priority = 10)
+    @Test(priority = 22)
     public void LikeonpostTest() throws InterruptedException {
         newsfadepage.likeonpost();
     }
 
-    @Test(priority = 17)
+    @Test(priority = 29)
     public void SearchFromDbTest() throws Exception {
         newsfadepage.searchfromdatabase();
         Assert.assertEquals(newsfadepage.searchfromdatabase(), newsfadepage.Expected());
     }
 
-    @Test(priority = 14)
+    @Test(priority = 26)
     public void LikeonphotoTest2() throws InterruptedException {
         newsfadepage.likeonpost();
     }
 
-    @Test(priority = 15)
+    @Test(priority = 27)
     public void CommentOnPhotoTest2() throws InterruptedException {
         newsfadepage.commentOnPost();
         Thread.sleep(3000);
     }
 
-    @Test(priority = 16)
+    @Test(priority = 28)
     public void DelphotoTest() throws InterruptedException {
         newsfadepage.DeletePost();
     }
