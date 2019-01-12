@@ -18,7 +18,7 @@ public class MessengerPageTest extends CommonAPI {
         signup.login();
         newsFeedPage.landinonmessenger();
     }
-    @Test(priority = 19)
+    @Test(priority = 31)
     public void getTitleTest() throws InterruptedException {
         Thread.sleep(1000);
         String actual= messengerPage.validatePageTitle();
