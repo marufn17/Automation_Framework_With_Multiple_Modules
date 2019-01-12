@@ -2,7 +2,6 @@ package report;
 import com.relevantcodes.extentreports.ExtentReports;
 import org.testng.ITestContext;
 import org.testng.Reporter;
-
 import java.io.File;
 
 public class ExtentManager {
@@ -21,9 +20,8 @@ public class ExtentManager {
         }
         return extent;
     }
-
     public static void setOutputDirectory(ITestContext context){
         ExtentManager.context = context;
-
     }
 }
+

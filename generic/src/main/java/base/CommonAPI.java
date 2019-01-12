@@ -3,6 +3,10 @@ package base;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.codehaus.plexus.util.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -30,10 +34,11 @@ public class CommonAPI {
     public CommonAPI(){}
     @Parameters({"url","os","browser"})
     @BeforeMethod
-    public void setUp(@Optional("https://www.nbc.com") String url, @Optional("mac") String os, @Optional("chrome") String browser){
+    public void setUp(@Optional("https://www.ebay.com") String url, @Optional("windows") String os, @Optional("chrome") String browser){
         getDriver(os, browser);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+        driver.manage ().window ().fullscreen ();
         driver.get(url);}
 
     public WebDriver getDriverIncognito(String os, String browserName){
