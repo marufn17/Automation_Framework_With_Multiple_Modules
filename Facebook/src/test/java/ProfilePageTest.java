@@ -18,7 +18,7 @@ public class ProfilePageTest extends CommonAPI {
         signup.login();
         newsFeedPage.landinonprofile();
     }
-    @Test(priority = 18)
+    @Test(priority = 30)
     public void getTitleTest() throws InterruptedException {
         Thread.sleep(1000);
         String actual= profilePage.validateLoginPageTitle();

@@ -150,12 +150,14 @@ public class NewsFeedPage extends CommonAPI {
     //Post a Photo
     File imgfile = new File("/Users/mohammedmehadi/Desktop/1.png");
     public void photoupload() throws InterruptedException, AWTException {
+        driver.manage().window().setPosition(new org.openqa.selenium.Point(100, 50));
+        actions.click(photouploadbutton).build().perform();
+        actions.click(photouploadbutton).build().perform();
+        Thread.sleep(1000);
         StringSelection stringSelection= new StringSelection(imgfile.getAbsolutePath());
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-        actions.click(photouploadbutton).build().perform();
-        actions.click(photouploadbutton).build().perform();
         Robot robot = new Robot();
-        Thread.sleep(1000);
+
 
         robot.keyPress(KeyEvent.VK_META);
 
@@ -164,6 +166,7 @@ public class NewsFeedPage extends CommonAPI {
         robot.keyRelease(KeyEvent.VK_META);
 
         robot.keyRelease(KeyEvent.VK_TAB);
+
 
         robot.delay(500);
 

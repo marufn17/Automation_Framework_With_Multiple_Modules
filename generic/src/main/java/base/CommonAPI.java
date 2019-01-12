@@ -34,7 +34,7 @@ public class CommonAPI {
     public CommonAPI(){}
     @Parameters({"url","os","browser"})
     @BeforeMethod
-    public void setUp(@Optional("https://www.ebay.com") String url, @Optional("windows") String os, @Optional("chrome") String browser){
+    public void setUp(@Optional("https://www.facebook.com") String url, @Optional("mac") String os, @Optional("chrome") String browser){
         getDriver(os, browser);
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
