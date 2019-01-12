@@ -27,9 +27,15 @@ public class HomePage extends CommonAPI {
 
     @FindBy(xpath = "//a[contains(text(),'register')]")
     WebElement createacct;
-
-    public void createacct() {
+    @FindBy(xpath = "//*[@id=\"sgnInPnl\"]/div[1]/span[1]")
+    WebElement createAcctTab;
+    public String createaccttab(){
         createacct.click();
+        String cract = createAcctTab.getText();
+        System.out.println(cract);
+        return cract;
+
+
     }
 
     @FindBy(id = "gh-ac")
