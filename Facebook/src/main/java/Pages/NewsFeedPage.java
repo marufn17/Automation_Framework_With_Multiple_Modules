@@ -6,17 +6,14 @@ import HelperClasses.Xls_Reader;
 import base.CommonAPI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,6 +68,8 @@ public class NewsFeedPage extends CommonAPI {
         Expected();
         connect.createTableFromStringToMySql("Searchitems","ItemsList");
         connect.insertDataFromArrayListToSqlTable(glist,"Searchitems","ItemsList");
+        Actions actions = new Actions(driver);
+        actions.click(searchbox).build().perform();
         List<String> data = connect.readDataBase("Searchitems","ItemsList");
         for (String items:data){
             searchbox.sendKeys(items, Keys.ENTER);
@@ -98,6 +97,8 @@ public class NewsFeedPage extends CommonAPI {
     public void xltoSearchbar2() throws InterruptedException {
         SimpleXlReader simmplexlreader = new SimpleXlReader("/Users/mohammedmehadi/Desktop/MehadiBranch/AutomationP1/Facebook/DataProvider/FacebookSearch.xlsx");
         int rowcount = simmplexlreader.getRowCount(0);
+        Actions actions = new Actions(driver);
+        actions.click(searchbox).build().perform();
         for (int i = 0; i < rowcount; i++) {
             String searchItems = simmplexlreader.getData(0, i, 0);
             searchbox.sendKeys(searchItems, Keys.ENTER);

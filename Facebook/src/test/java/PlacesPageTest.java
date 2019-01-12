@@ -14,7 +14,7 @@ public class PlacesPageTest extends CommonAPI {
         placesPage =new PlacesPage();
         signup.gotoprofiles();
     }
-    @Test(priority = 33)
+    @Test(priority = 34)
     public void ValidatePageTitle() throws InterruptedException {
         Thread.sleep(1000);
         String actual= placesPage.validatePageTitle();
