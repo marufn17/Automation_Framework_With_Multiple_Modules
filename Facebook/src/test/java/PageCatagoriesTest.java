@@ -14,7 +14,7 @@ public class PageCatagoriesTest extends CommonAPI {
         pageCatagoriesPage = new PageCatagoriesPage();
         signup.gotoprofiles();
     }
-    @Test(priority = 35)
+    @Test(priority = 32)
     public void ValidatePageTitle() throws InterruptedException {
         Thread.sleep(1000);
         String actual= pageCatagoriesPage.validatePageTitle();
