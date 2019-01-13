@@ -17,6 +17,9 @@
     <test name = "Ebay Test Suits (Windows/Chrome)">
         <classes>
             <class name="Test.TestHomePage"/>
+            <class name="Test.TestFashionPage"/>
+            <class name="Test.TestRegisterPage"/>
+            <class name="Test.TestSignInPage"/>
         </classes>
     </test>
 </suite>

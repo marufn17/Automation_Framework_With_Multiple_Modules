@@ -162,8 +162,18 @@ public class TestHomePage extends CommonAPI {
     public void hompagelogotab() throws InterruptedException {
         boolean logo = HomePage.homepagelogotest();
         Assert.assertEquals(logo, true);
-
     }
+    @Test(priority = 27)
+    public void itemssearchfromdatabase() throws Exception {
+        homePage.searchfromdatabase();
+    }
+    @Test(priority = 28)
+    public void itemsearchfromExceldata() throws InterruptedException {
+        homePage.searchfromExcel();
+    }
+    @Test(priority = 29)
+    public void signinpage(){homePage.setSingin();}
+
    }
 
 
