@@ -1,13 +1,15 @@
 package Pages;
 
+import Helper.ConnectToSqlDb;
+import Helper.ExcelReader;
 import base.CommonAPI;
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomePage extends CommonAPI {
     public HomePage() {
@@ -24,7 +26,6 @@ public class HomePage extends CommonAPI {
         String books = booksitems.getText();
         return books;
     }
-
     @FindBy(xpath = "//a[contains(text(),'register')]")
     WebElement createacct;
     @FindBy(xpath = "//*[@id=\"sgnInPnl\"]/div[1]/span[1]")
@@ -227,7 +228,32 @@ public class HomePage extends CommonAPI {
         boolean logo = homepagelogo.isDisplayed();
         return logo;
     }
-}
+    ConnectToSqlDb connectToSqlDb = new ConnectToSqlDb();
+    public void searchfromdatabase() throws Exception {
+        List<String> list = new ArrayList<String>();
+        list.add("iphone");
+        list.add("toy");
+        list.add("java book");
+        connectToSqlDb.insertDataFromArrayListToSqlTable(list, "ItemTable", "ItemName");
+        searchbox.click();
+        List<String> list1 = connectToSqlDb.readDataBase("ItemTable", "ItemName");
+        for (String items : list1) {
+            searchbox.sendKeys(items, Keys.ENTER);
+            searchbox.clear();
+        }
+    }
+        public void xltoSearchbar2() throws InterruptedException {
+            ExcelReader simmplexlreader = new ExcelReader("C:\\Users\\soin1\\ExcelFiles\\TestData.xlsx");
+            int rowcount = simmplexlreader.getRowCount(0);
+            searchbox.click();
+            for (int i = 0; i < rowcount; i++) {
+                String searchItems = simmplexlreader.getData(0, i, 0);
+                searchbox.sendKeys(searchItems, Keys.ENTER);
+                searchbox.clear();
+                Thread.sleep(500);
+     }
+    }
+   }
 
 
 
