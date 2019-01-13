@@ -179,7 +179,7 @@ public class HomePage extends CommonAPI {
             searchbox.sendKeys(items, Keys.ENTER);
             searchbox.clear();        }
     }
-    public void xltoSearchbar2() throws InterruptedException {
+    public void searchfromExcel() throws InterruptedException {
     ExcelReader simmplexlreader = new ExcelReader("C:\\Users\\soin1\\ExcelFiles\\TestData.xlsx");
     int rowcount = simmplexlreader.getRowCount(0);
     searchbox.click();
@@ -190,6 +190,9 @@ public class HomePage extends CommonAPI {
     Thread.sleep(500);
      }
     }
+    @FindBy(xpath = "//*[@id=\"gh-ug\"]/a")
+    WebElement singin;
+    public void setSingin(){singin.click();}
    }
 
 
