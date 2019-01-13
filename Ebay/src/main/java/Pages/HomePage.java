@@ -180,7 +180,7 @@ public class HomePage extends CommonAPI {
             searchbox.clear();        }
     }
     public void searchfromExcel() throws InterruptedException {
-    ExcelReader simmplexlreader = new ExcelReader("C:\\Users\\soin1\\ExcelFiles\\TestData.xlsx");
+    ExcelReader simmplexlreader = new ExcelReader("C:\\Users\\soin1\\AutomationProjectPNT\\AutomationP1\\Ebay\\src\\main\\java\\ExcelDataFile\\xlsx\\TestData.xlsx");
     int rowcount = simmplexlreader.getRowCount(0);
     searchbox.click();
     for (int i = 0; i < rowcount; i++) {
