@@ -167,10 +167,12 @@ public class TestHomePage extends CommonAPI {
     public void itemssearchfromdatabase() throws Exception {
         homePage.searchfromdatabase();
     }
-    @Test
+    @Test(priority = 28)
     public void itemsearchfromExceldata() throws InterruptedException {
-        homePage.xltoSearchbar2();
+        homePage.searchfromExcel();
     }
+    @Test(priority = 29)
+    public void signinpage(){homePage.setSingin();}
 
    }
 
