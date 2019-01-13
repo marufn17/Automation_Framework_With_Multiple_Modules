@@ -17,14 +17,20 @@ import org.testng.annotations.Test;
         homePage = PageFactory.initElements(driver,HomePage.class);
         homePage.createaccttab();
     }
-    @Test
+    @Test(priority = 1)
     public void firstNamefield(){
         registerPage.setFirstName("Safwan");
     }
-    @Test
+    @Test(priority = 2)
     public void lastNamefield(){
         registerPage.setLastName("Rahman");
     }
-
-
+    @Test(priority = 3)
+        public void emailfield(){
+        registerPage.setEmail("safwan@pnt.com");
+    }
+    @Test(priority = 4)
+        public void passwordfield(){
+        registerPage.setPassword();
+    }
 }
