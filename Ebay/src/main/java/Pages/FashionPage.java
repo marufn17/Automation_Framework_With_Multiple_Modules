@@ -13,6 +13,6 @@ public class FashionPage extends CommonAPI {
     WebElement healthbutton;
 
     public void healthtab() {
-        healthbutton.click();
+       healthbutton.click();
     }
 }
