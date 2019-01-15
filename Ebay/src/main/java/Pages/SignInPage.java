@@ -15,4 +15,6 @@ public class SignInPage extends CommonAPI {
     @FindBy(css = "#pass")
     WebElement passWord;
     public void setPassWord(String Password){passWord.sendKeys(Password);}
-}
+
+    }
+

@@ -1,11 +1,18 @@
 package Test;
 
+import Helper.GoogleSheetReader;
 import Pages.HomePage;
 import Pages.SignInPage;
 import base.CommonAPI;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import report.TestLogger;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Properties;
 
 public class TestSignInPage extends CommonAPI {
     SignInPage signInPage;
@@ -21,4 +28,7 @@ public class TestSignInPage extends CommonAPI {
     }
     @Test(priority = 2)
     public void passwordfield(){signInPage.setPassWord("abc@123");}
-}
+
+    }
+
+
