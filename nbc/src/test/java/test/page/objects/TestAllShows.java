@@ -20,7 +20,7 @@ public class TestAllShows extends ApplicationPageBase {
     @Test
     public void allShowsTabText(){
         homePage.clickOnShows();
-        String actual = allShows.allShpows();
+        String actual = allShows.allShows();
         Assert.assertEquals(actual,"ALL");
     }
     @Test

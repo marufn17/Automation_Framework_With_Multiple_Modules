@@ -32,14 +32,12 @@ public class AllShows extends ApplicationPageBase {
     @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/section/section/div[2]/div/div[1]/section/div/div[2]/a[14]/article/div[2]/div[1]")
     WebElement cTheblack;
 
-    public String allShpows(){
-        allShows.click();
+    public String allShows(){
         all.click();
         String text = allHeader.getText();
         return text;
     }
     public List list(){
-        allShows.click();
         all.click();
         List<WebElement> webElements = new ArrayList<>();
         webElements.add(apBio);
@@ -71,4 +69,4 @@ public class AllShows extends ApplicationPageBase {
         expectedShowsName.add("The Blacklist");
         return expectedShowsName;
     }
-}
+}//347-503-9266

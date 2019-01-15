@@ -1,15 +1,12 @@
 package page.objects;
 
 import application.page.base.ApplicationPageBase;
+import application.page.base.XlsDataReader;
 import application.page.base.XlsxDataReader;
-import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.testng.annotations.Test;
 
-import java.io.File;
-import java.lang.invoke.CallSite;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,16 +22,16 @@ public class FooterPage extends ApplicationPageBase {
     WebElement fullEpisodesApp;
     @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(2) > a")
     WebElement faq;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(3) > a")
+    @FindBy(css = "[href='https://www.nbc.com/exclusives/pages/casting']")
     WebElement casting;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(4) > a")
-    WebElement nbcStore;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(5) > a")
+    @FindBy(css = "[href='https://www.nbc.com/global/pages/tv-ratings']")
     WebElement parentalRating;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(6) > a")
+    @FindBy(css = "[href='/general/pages/accessibility']")
     WebElement Accessibilty;
-    @FindBy(css = "#main > footer > div.footer__legal > div > ul > li:nth-child(1) > a")
+    @FindBy(css = "[href='https://www.nbc.com/contact/general']")
     WebElement contactUs;
+    @FindBy(css = "[href='https://www.nbc.com/tickets/pages/tickets-and-nbc-studio-tour']")
+    WebElement ticketAndNbc;
     @FindBy(css = "#main > footer > div.footer__legal > div > ul > li:nth-child(2) > a")
     WebElement corporateInfo;
     @FindBy(css = "#main > footer > div.footer__legal > div > ul > li:nth-child(3) > a")
@@ -61,7 +58,7 @@ public class FooterPage extends ApplicationPageBase {
     WebElement tumblricon;
     @FindBy(name = "pinterest")
     WebElement pinicon;
-    @FindBy(name = "googleplus")
+    @FindBy(css = ".googleplus")
     WebElement gplusicon;
     @FindBy(name = "youtube")
     WebElement ytubeicon;
@@ -77,10 +74,10 @@ public class FooterPage extends ApplicationPageBase {
         webElements.add(fullEpisodesApp);
         webElements.add(faq);
         webElements.add(casting);
-        webElements.add(nbcStore);
-        webElements.add(parentalRating);
-        webElements.add(Accessibilty);
         webElements.add(contactUs);
+        webElements.add(parentalRating);
+        webElements.add(ticketAndNbc);
+        webElements.add(Accessibilty);
         webElements.add(corporateInfo);
         webElements.add(jobs);
         webElements.add(privacy);
@@ -97,17 +94,29 @@ public class FooterPage extends ApplicationPageBase {
         System.out.println(list);
         return list;
     }
-    XlsxDataReader xlData = new XlsxDataReader("/Users/maruf/AllJavaProject/AutomationP1/nbc/testData/FooterLinkName.xlsx");
-    public List expectedWebElement(){
-        int rowcount = xlData.getRowCount("Sheet1");
+    XlsxDataReader xlxData = new XlsxDataReader("../nbc/testData/FooterLinkName.xlsx");
+    public List expectedWebElementXlsx(){
+        int rowcount = xlxData.getRowCount("sheet1");
         List<String> expect = new ArrayList<>();
-        for(int i = 2; i <= rowcount; i++){
-            expect.add(xlData.getCellData("Sheet1","WebElementName",i));
+        for(int i = 1; i < rowcount; i++){
+            expect.add(xlxData.getData(0,i,0));
+            System.out.println(xlxData.getData(0,i,0));
         }
         System.out.println(expect);
         return expect;
     }
-    public String fbIcon() throws InterruptedException {//new tab hand
+    XlsDataReader xlData = new XlsDataReader("../nbc/testData/FooterLinkName.xls");
+    public List expectedWebElementXls(){
+        int rowcount = xlData.getRowCount("sheet1");
+        List<String> expect = new ArrayList<>();
+        for(int i = 1; i < rowcount; i++){
+            expect.add(xlData.getData(0,i,0));
+            System.out.println(xlData.getData(0,i,0));
+        }
+        System.out.println(expect);
+        return expect;
+    }
+    public String fbIcon() throws InterruptedException {//new tab handling
         fbicon.click();
         Thread.sleep(3000);
         System.out.println (driver.getTitle ());
@@ -196,15 +205,15 @@ public class FooterPage extends ApplicationPageBase {
         String url = driver.getCurrentUrl ();
         return url;
     }
-    public String nbcStoreLink() throws InterruptedException {
-        nbcStore.click ();
+    public String parentalLink() throws InterruptedException {
+        parentalRating.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
         String url = driver.getCurrentUrl ();
         return url;
     }
-    public String parentalLink() throws InterruptedException {
-        parentalRating.click ();
+    public String ticketAndNbc() throws InterruptedException {
+        ticketAndNbc.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
         String url = driver.getCurrentUrl ();
