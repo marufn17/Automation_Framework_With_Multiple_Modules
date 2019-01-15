@@ -10,6 +10,7 @@
     <!--<parameter name="browserName" value="${browserName}"/>-->
     <!--<parameter name="browserVersion" value="53.0"/>-->
     <!--<parameter name="url" value="https://www.nbc.com"/>-->
+
     <parameter name="os" value="windows"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.ebay.com"/>
@@ -20,6 +21,8 @@
             <class name="Test.TestFashionPage"/>
             <class name="Test.TestRegisterPage"/>
             <class name="Test.TestSignInPage"/>
+            <class name="Test.TestExcelReaderPage"/>
+            <class name="Test.TestSqlDataPage"/>
         </classes>
     </test>
 </suite>
