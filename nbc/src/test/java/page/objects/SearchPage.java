@@ -4,6 +4,8 @@ import application.page.base.ConnectToSqlDB;
 import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import report.TestLogger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,12 +13,13 @@ public class SearchPage extends CommonAPI {
     ConnectToSqlDB connect = new ConnectToSqlDB ();
     @FindBy(xpath = "//input[@class='search-input__input']")
     WebElement searchField;
-    @FindBy(xpath = "//main[@id=\'main\']/div[1]/div/div/div/div/div[2]/div/section/div/div")
+    @FindBy(xpath = "//main[@id='main']/div[1]/div/div/div/div/div[2]/div/section/div/div")
     WebElement searchResult;
     @FindBy(xpath = "//div[@class='search__results__no_results']")
     WebElement error;
 
     public List<String> searchResult() throws Exception {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         List<String> data = connect.readDataBase("searchItem","itemName");
         List<String> list = new ArrayList<>();
         for (String st:data){
@@ -43,6 +46,7 @@ public class SearchPage extends CommonAPI {
         return list;
     }
     public String searchErrorMessage(){
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         searchField.sendKeys("wwf");
         String text = error.getText();
         return text;

@@ -13,14 +13,16 @@
 
     <test name = "NBC Test Suits (Mac/Chrome)">
         <classes>
-            <!--<class name="test.page.objects.TestHomePage"/>-->
-            <class name="test.page.objects.TestFooterPage"/>
-            <!--<class name="test.page.objects.TestAllShows"/>-->
-            <!--<class name="test.page.objects.TestCurrentShows"/>-->
-            <!--<class name="test.page.objects.TestUpComingShows"/>-->
-            <!--<class name="test.page.objects.TestThrowBack"/>-->
-            <!--<class name="test.page.objects.TestSearchPage"/>-->
-            <!--<class name="test.page.objects.TestSignUpPage"/>-->
+            <class name="test.page.objects.HomePageTest"/>
+            <class name="test.page.objects.HomePageTabFunctionTest"/>
+            <class name="test.page.objects.FooterSocialMediaTest"/>
+            <class name="test.page.objects.FooterExtLinkTest"/>
+            <class name="test.page.objects.TestAllShows"/>
+            <class name="test.page.objects.TestCurrentShows"/>
+            <class name="test.page.objects.TestUpComingShows"/>
+            <class name="test.page.objects.TestThrowBack"/>
+            <class name="test.page.objects.TestSearchPage"/>
+            <class name="test.page.objects.TestSignUpPage"/>
         </classes>
     </test>
 </suite>

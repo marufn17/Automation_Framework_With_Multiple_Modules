@@ -3,9 +3,11 @@ package page.objects;
 import application.page.base.ApplicationPageBase;
 import application.page.base.XlsDataReader;
 import application.page.base.XlsxDataReader;
+import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import report.TestLogger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,10 +66,12 @@ public class FooterPage extends ApplicationPageBase {
     WebElement ytubeicon;
 
     public boolean isFooterLogoDisplayd(){
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         boolean logo = footerLogo.isDisplayed();
         return logo;
     }
     public List webElementList(){
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         List<WebElement> webElements = new ArrayList<>();
         webElements.add(shareMsg);
         webElements.add(quickLinkMsg);
@@ -117,6 +121,7 @@ public class FooterPage extends ApplicationPageBase {
         return expect;
     }
     public String fbIcon() throws InterruptedException {//new tab handling
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         fbicon.click();
         Thread.sleep(3000);
         System.out.println (driver.getTitle ());
@@ -130,6 +135,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String twitterIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         twittericon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -141,6 +147,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String tumbIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         tumblricon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -152,6 +159,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String pinIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         pinicon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -163,6 +171,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String gplusIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         gplusicon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -174,6 +183,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String yTubelusIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         ytubeicon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -185,6 +195,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String nbcLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         fullEpisodesApp.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -192,6 +203,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String faqLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         faq.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -199,6 +211,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String castingLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         casting.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -206,6 +219,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String parentalLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         parentalRating.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -213,6 +227,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String ticketAndNbc() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         ticketAndNbc.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -220,6 +235,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String accessibilityLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Accessibilty.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -227,6 +243,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String contactUsLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         contactUs.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -234,6 +251,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String corporateInfoLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         corporateInfo.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -241,6 +259,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String jobsLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         jobs.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -248,6 +267,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String privacyLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         privacy.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -255,6 +275,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String termLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         terms.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -262,6 +283,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String advertiseLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         advertise.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -269,6 +291,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String viewerLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         viewerPanel.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -276,6 +299,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String closedLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         closedCaptioning.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -283,6 +307,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String technicalLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         technicalSupport.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -290,6 +315,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String videoLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         videoViewing.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());

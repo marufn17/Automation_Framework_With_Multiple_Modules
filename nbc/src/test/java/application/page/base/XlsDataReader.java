@@ -2,14 +2,19 @@ package application.page.base;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class XlsDataReader {
     HSSFWorkbook xlsWorkbook;
     HSSFSheet xlsSheet;
+    int rowNum;
+    Cell cell = null;
+    FileOutputStream fio = null;
 
     public XlsDataReader(String xlFilePath){
         try{
@@ -36,5 +41,20 @@ public class XlsDataReader {
             int number = xlsSheet.getLastRowNum() + 1;
             return number;
         }
+    }
+    public void writeBack(String value) throws IOException {
+        xlsWorkbook = new HSSFWorkbook();
+        xlsSheet = xlsWorkbook.createSheet();
+        Row row = xlsSheet.createRow(rowNum);
+        row.setHeightInPoints(10);
+
+        fio = new FileOutputStream(new File("ExcelFile.xls"));
+        xlsWorkbook.write(fio);
+        for (int i = 0; i < row.getLastCellNum(); i++) {
+            row.createCell(i);
+            cell.setCellValue(value);
+        }
+        fio.close();
+        xlsWorkbook.close();
     }
 }
