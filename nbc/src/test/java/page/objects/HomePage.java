@@ -41,7 +41,7 @@ public class HomePage extends ApplicationPageBase {
     @FindBy(how = How.CSS, css = ".navigation__item--search [aria-label]")
     WebElement searchTab;
     @FindBy(how = How.CSS, css = ".navigation__item__link--sign-up span")
-    WebElement signUPTab;
+    public static WebElement signUPTab;
     @FindBy(css = "#main > div.responsive-app__wrapper > div > div > div > div > div.search-results__outer > div > div > section > div > div.section-heading > h2")
     WebElement searchHeader;
     @FindBy(css = ".page-title__title")

@@ -1,15 +1,15 @@
 package page.objects;
 
+import application.page.base.ApplicationPageBase;
 import application.page.base.ConnectToSqlDB;
 import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import report.TestLogger;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPage extends CommonAPI {
+public class SearchPage extends ApplicationPageBase {
     ConnectToSqlDB connect = new ConnectToSqlDB ();
     @FindBy(xpath = "//input[@class='search-input__input']")
     WebElement searchField;

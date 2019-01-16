@@ -23,6 +23,7 @@
             <class name="Test.TestSignInPage"/>
             <class name="Test.TestExcelReaderPage"/>
             <class name="Test.TestSqlDataPage"/>
+            <class name="Test.TestFooterPage"/>
         </classes>
     </test>
 </suite>

@@ -1,14 +1,14 @@
 package page.objects;
 
+import application.page.base.ApplicationPageBase;
 import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import report.TestLogger;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class SignUpPage extends CommonAPI {
+public class SignUpPage extends ApplicationPageBase {
     @FindBy(id = "signup-form__email")
     WebElement signUpEmail;
     @FindBy(id = "password-input__password")
@@ -25,6 +25,8 @@ public class SignUpPage extends CommonAPI {
     WebElement tickError;
     @FindBy(css = "#main > div.responsive-app__wrapper > div > div > main > div.flash-messages > div > span")
     WebElement errorMessage;
+    @FindBy(css = "[href='/sign-in']")
+    WebElement signIn;
 
     public List withoutInfo(){
         TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
@@ -70,5 +72,8 @@ public class SignUpPage extends CommonAPI {
         signUpButton.click();
         String text = tickError.getText();
         return text;
+    }
+    public void clickOnSignIn(){
+        signIn.click();
     }
 }
