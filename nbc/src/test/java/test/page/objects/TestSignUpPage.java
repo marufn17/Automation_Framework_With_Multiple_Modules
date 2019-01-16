@@ -1,6 +1,6 @@
 package test.page.objects;
 
-import base.CommonAPI;
+import application.page.base.ApplicationPageBase;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -9,7 +9,7 @@ import page.objects.HomePage;
 import page.objects.SignUpPage;
 import java.util.List;
 
-public class TestSignUpPage extends CommonAPI {
+public class TestSignUpPage extends ApplicationPageBase {
     SignUpPage signUpPage;
     HomePage homePage;
     @BeforeMethod
