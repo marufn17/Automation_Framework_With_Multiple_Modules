@@ -15,6 +15,7 @@ public class SimpleXlReader {
             FileInputStream fis =new FileInputStream(src);
             wb = new XSSFWorkbook(fis);
             sheet1 = wb.getSheetAt(0);
+            wb.close();
 
         }catch (Exception e){
             System.out.println(e.getMessage());

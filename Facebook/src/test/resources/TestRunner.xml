@@ -13,6 +13,12 @@
         <classes>
             <class name="TestFB"/>
             <class name="NewsFeedPageTest"/>
+            <class name="ProfilePageTest"/>
+            <class name="MessengerPageTest"/>
+            <class name="PageCatagoriesTest"/>
+            <class name="PagespageTest"/>
+            <class name="PlacesPageTest"/>
+            <class name="ProfilesPageTest"/>
         </classes>
     </test>
 </suite>

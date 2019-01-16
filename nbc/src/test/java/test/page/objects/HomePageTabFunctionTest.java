@@ -1,47 +1,21 @@
 package test.page.objects;
 
 import application.page.base.ApplicationPageBase;
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.HomePage;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TestHomePage extends ApplicationPageBase {
-
+public class HomePageTabFunctionTest extends ApplicationPageBase {
     HomePage homePage;
 
     @BeforeMethod
     public void setUp(){homePage = PageFactory.initElements(driver,HomePage.class);}
     @Test
-    public void homePageTitleTest(){
-        String title = homePage.getHomePageTitle();
-        Assert.assertEquals(title,"NBC TV Network - Shows, Episodes, Schedule");
-    }
-    @Test
-    public void logoDisplayTest(){
-        boolean display = homePage.nbcLogo();
-        Assert.assertEquals(display,true);
-    }
-    @Test
-    public void slideShowContainerTest(){
-        boolean display = homePage.SlideshowContainerDisplay();
-        Assert.assertEquals(display,true);
-    }
-    @Test
-    public void tabNameCheckHomePage(){
-        List<String> expected = homePage.spellcheckHomePageExpected();
-        List<String> actual = homePage.spellCheckHomePage();
-        Assert.assertEquals(actual,expected);
-    }
-    @Test
     public void clickSearch(){
-       String actual = homePage.checkSearchTab();
-       Assert.assertEquals(actual,"FEATURED SHOWS");
+        String actual = homePage.checkSearchTab();
+        Assert.assertEquals(actual,"FEATURED SHOWS");
     }
     @Test
     public void clickEpisodes(){
@@ -71,11 +45,11 @@ public class TestHomePage extends ApplicationPageBase {
     @Test
     public void clickNewsAndSports(){
         boolean actual = homePage.newsFrame();
-        Assert.assertEquals(actual,true);
+        Assert.assertTrue (actual);
     }
     @Test
     public void clickShows(){
         boolean actual = homePage.showsFrame();
-        Assert.assertEquals(actual,true);
+        Assert.assertTrue (actual);
     }
 }
