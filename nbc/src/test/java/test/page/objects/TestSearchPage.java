@@ -1,5 +1,6 @@
 package test.page.objects;
 
+import application.page.base.ApplicationPageBase;
 import base.CommonAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -9,7 +10,7 @@ import page.objects.HomePage;
 import page.objects.SearchPage;
 import java.util.List;
 
-public class TestSearchPage extends CommonAPI {
+public class TestSearchPage extends ApplicationPageBase {
     SearchPage searchPage;
     HomePage homePage;
     @BeforeMethod
