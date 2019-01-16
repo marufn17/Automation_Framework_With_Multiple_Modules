@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.objects.AllShows;
 import page.objects.HomePage;
-
 import java.util.List;
 
 public class TestAllShows extends ApplicationPageBase {
@@ -21,14 +20,15 @@ public class TestAllShows extends ApplicationPageBase {
     @Test
     public void allShowsTabText(){
         homePage.clickOnShows();
-        String actual = allShows.allShpows();
+        String actual = allShows.allShows();
         Assert.assertEquals(actual,"ALL");
     }
     @Test
-    public void allShowsTitle(){
+    public void allShowsTitle(){//Using data from array list
         homePage.clickOnShows();
         List actual = allShows.list();
         List expected = allShows.expectedAllShows();
         Assert.assertEquals(actual,expected);
     }
+
 }
