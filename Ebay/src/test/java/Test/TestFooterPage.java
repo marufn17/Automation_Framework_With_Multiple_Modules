@@ -20,4 +20,10 @@ public class TestFooterPage extends HomePage {
         String expected = "https://www.facebook.com/ebay/";
         Assert.assertEquals(actual, expected);
     }
+    @Test
+    public void twitterLinkTest() throws InterruptedException {
+        String actual = footerPage.twitterIcon();
+        String expected = "https://twitter.com/eBay";
+        Assert.assertEquals(actual, expected);
+    }
 }
