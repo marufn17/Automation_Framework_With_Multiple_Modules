@@ -26,4 +26,10 @@ public class TestFooterPage extends HomePage {
         String expected = "https://twitter.com/eBay";
         Assert.assertEquals(actual, expected);
     }
+    @Test
+    public void eBayBlogLinkTest() throws InterruptedException {
+        String actual = footerPage.eBayBlogIcon();
+        String expected = "https://www.ebay.com/rpp/stories";
+        Assert.assertEquals(actual, expected);
+    }
 }
