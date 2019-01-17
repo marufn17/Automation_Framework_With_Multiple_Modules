@@ -48,7 +48,7 @@ public class FooterPage extends HomePage {
         return url;
     }
 
-    @FindBy(xpath = "//*[@id=\"gf-BIG\"]/table/tbody/tr/td[3]/ul/li[6]/a")
+    @FindBy(xpath = "//*[@id=\\\"gf-BIG\\\"]/table/tbody/tr/td[3]/ul/li[6]/a\"")
     WebElement eBayBlog;
 
     public String eBayBlogIcon() throws InterruptedException {
@@ -61,6 +61,25 @@ public class FooterPage extends HomePage {
 
         for (String ebayblog : driver.getWindowHandles()) {
             driver.switchTo().window(ebayblog);
+        }
+        System.out.println(driver.getTitle());
+        String url = driver.getCurrentUrl();
+        System.out.println(url);
+        return url;
+    }
+    @FindBy(xpath = "//*[@id=\"gf-BIG\"]/table/tbody/tr/td[4]/ul/li[1]/h3/a")
+    WebElement abouteBay;
+
+    public String abouteBayIcon() throws InterruptedException {
+
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        abouteBay.click();
+        Thread.sleep(3500);
+        System.out.println(driver.getTitle());
+
+        for (String aboutebay : driver.getWindowHandles()) {
+            driver.switchTo().window(aboutebay);
         }
         System.out.println(driver.getTitle());
         String url = driver.getCurrentUrl();
