@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 public class NewsFeedPageTest extends CommonAPI {
     Signup signuppage;
@@ -95,6 +96,12 @@ public class NewsFeedPageTest extends CommonAPI {
     @Test(priority = 28)
     public void DelphotoTest() throws InterruptedException {
         newsfadepage.DeletePost();
+    }
+    @Test
+    public void searchFromGoogleSheetTest() throws IOException, InterruptedException {
+        Thread.sleep(1000);
+        newsfadepage.searchFromGoogleSheet();
+        Thread.sleep(1000);
     }
 }
 

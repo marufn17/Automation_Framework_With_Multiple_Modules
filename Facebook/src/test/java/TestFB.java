@@ -76,9 +76,5 @@ public class TestFB extends CommonAPI {
     public void ClickonFooterPlacesTest()throws InterruptedException{
         Assert.assertEquals(Singnupob.clickOnFooterplaces(),true);
     }
-
-
-
-
 }
 

@@ -16,7 +16,6 @@ public class SimpleXlReader {
             wb = new XSSFWorkbook(fis);
             sheet1 = wb.getSheetAt(0);
             wb.close();
-
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -31,4 +30,4 @@ public class SimpleXlReader {
       row = row +1;
       return row;
     }
-}
+    }
