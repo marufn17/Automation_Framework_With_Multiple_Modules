@@ -1,15 +1,13 @@
 package page.objects;
 
 import application.page.base.ApplicationPageBase;
+import application.page.base.XlsDataReader;
 import application.page.base.XlsxDataReader;
-import org.apache.poi.ss.formula.functions.T;
+import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.testng.annotations.Test;
-
-import java.io.File;
-import java.lang.invoke.CallSite;
+import report.TestLogger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,16 +23,16 @@ public class FooterPage extends ApplicationPageBase {
     WebElement fullEpisodesApp;
     @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(2) > a")
     WebElement faq;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(3) > a")
+    @FindBy(css = "[href='https://www.nbc.com/exclusives/pages/casting']")
     WebElement casting;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(4) > a")
-    WebElement nbcStore;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(5) > a")
+    @FindBy(css = "[href='https://www.nbc.com/global/pages/tv-ratings']")
     WebElement parentalRating;
-    @FindBy(css = "#main > footer > section > div > div.footer__right > div > ul > li:nth-child(6) > a")
+    @FindBy(css = "[href='/general/pages/accessibility']")
     WebElement Accessibilty;
-    @FindBy(css = "#main > footer > div.footer__legal > div > ul > li:nth-child(1) > a")
+    @FindBy(css = "[href='https://www.nbc.com/contact/general']")
     WebElement contactUs;
+    @FindBy(css = "[href='https://www.nbc.com/tickets/pages/tickets-and-nbc-studio-tour']")
+    WebElement ticketAndNbc;
     @FindBy(css = "#main > footer > div.footer__legal > div > ul > li:nth-child(2) > a")
     WebElement corporateInfo;
     @FindBy(css = "#main > footer > div.footer__legal > div > ul > li:nth-child(3) > a")
@@ -61,26 +59,28 @@ public class FooterPage extends ApplicationPageBase {
     WebElement tumblricon;
     @FindBy(name = "pinterest")
     WebElement pinicon;
-    @FindBy(name = "googleplus")
+    @FindBy(css = ".googleplus")
     WebElement gplusicon;
     @FindBy(name = "youtube")
     WebElement ytubeicon;
 
     public boolean isFooterLogoDisplayd(){
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         boolean logo = footerLogo.isDisplayed();
         return logo;
     }
     public List webElementList(){
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         List<WebElement> webElements = new ArrayList<>();
         webElements.add(shareMsg);
         webElements.add(quickLinkMsg);
         webElements.add(fullEpisodesApp);
         webElements.add(faq);
         webElements.add(casting);
-        webElements.add(nbcStore);
-        webElements.add(parentalRating);
-        webElements.add(Accessibilty);
         webElements.add(contactUs);
+        webElements.add(parentalRating);
+        webElements.add(ticketAndNbc);
+        webElements.add(Accessibilty);
         webElements.add(corporateInfo);
         webElements.add(jobs);
         webElements.add(privacy);
@@ -97,17 +97,30 @@ public class FooterPage extends ApplicationPageBase {
         System.out.println(list);
         return list;
     }
-    XlsxDataReader xlData = new XlsxDataReader("/Users/maruf/AllJavaProject/AutomationP1/nbc/testData/FooterLinkName.xlsx");
-    public List expectedWebElement(){
-        int rowcount = xlData.getRowCount("Sheet1");
+    XlsxDataReader xlxData = new XlsxDataReader("../nbc/testData/FooterLinkName.xlsx");
+    public List expectedWebElementXlsx(){
+        int rowcount = xlxData.getRowCount("sheet1");
         List<String> expect = new ArrayList<>();
-        for(int i = 2; i <= rowcount; i++){
-            expect.add(xlData.getCellData("Sheet1","WebElementName",i));
+        for(int i = 1; i < rowcount; i++){
+            expect.add(xlxData.getData(0,i,0));
+            System.out.println(xlxData.getData(0,i,0));
         }
         System.out.println(expect);
         return expect;
     }
-    public String fbIcon() throws InterruptedException {//new tab hand
+    XlsDataReader xlData = new XlsDataReader("../nbc/testData/FooterLinkName.xls");
+    public List expectedWebElementXls(){
+        int rowcount = xlData.getRowCount("sheet1");
+        List<String> expect = new ArrayList<>();
+        for(int i = 1; i < rowcount; i++){
+            expect.add(xlData.getData(0,i,0));
+            System.out.println(xlData.getData(0,i,0));
+        }
+        System.out.println(expect);
+        return expect;
+    }
+    public String fbIcon() throws InterruptedException {//new tab handling
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         fbicon.click();
         Thread.sleep(3000);
         System.out.println (driver.getTitle ());
@@ -121,6 +134,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String twitterIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         twittericon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -132,6 +146,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String tumbIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         tumblricon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -143,6 +158,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String pinIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         pinicon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -154,6 +170,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String gplusIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         gplusicon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -165,6 +182,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String yTubelusIcon() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         ytubeicon.click ();
         Thread.sleep (3000);
         System.out.println (driver.getTitle ());
@@ -176,6 +194,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String nbcLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         fullEpisodesApp.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -183,6 +202,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String faqLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         faq.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -190,27 +210,31 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String castingLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         casting.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
         String url = driver.getCurrentUrl ();
         return url;
     }
-    public String nbcStoreLink() throws InterruptedException {
-        nbcStore.click ();
-        Thread.sleep (1000);
-        System.out.println (driver.getTitle ());
-        String url = driver.getCurrentUrl ();
-        return url;
-    }
     public String parentalLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         parentalRating.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
         String url = driver.getCurrentUrl ();
         return url;
     }
+    public String ticketAndNbc() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        ticketAndNbc.click ();
+        Thread.sleep (1000);
+        System.out.println (driver.getTitle ());
+        String url = driver.getCurrentUrl ();
+        return url;
+    }
     public String accessibilityLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Accessibilty.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -218,6 +242,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String contactUsLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         contactUs.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -225,6 +250,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String corporateInfoLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         corporateInfo.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -232,6 +258,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String jobsLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         jobs.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -239,6 +266,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String privacyLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         privacy.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -246,6 +274,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String termLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         terms.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -253,6 +282,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String advertiseLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         advertise.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -260,6 +290,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String viewerLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         viewerPanel.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -267,6 +298,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String closedLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         closedCaptioning.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -274,6 +306,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String technicalLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         technicalSupport.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());
@@ -281,6 +314,7 @@ public class FooterPage extends ApplicationPageBase {
         return url;
     }
     public String videoLink() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         videoViewing.click ();
         Thread.sleep (1000);
         System.out.println (driver.getTitle ());

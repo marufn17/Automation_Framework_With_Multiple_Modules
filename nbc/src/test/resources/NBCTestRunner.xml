@@ -3,21 +3,20 @@
 
 <suite name="NBC Automation Test" parallel="false">
 
-    <!--<parameter name="useCloudEnv" value="false"/>-->
-    <!--<parameter name="cloudEnvName" value="browserstack"/>-->
-    <!--<parameter name="os" value="OS X"/>-->
-    <!--<parameter name="os_version" value="Sierra"/>-->
-    <!--<parameter name="browserName" value="${browserName}"/>-->
-    <!--<parameter name="browserVersion" value="53.0"/>-->
-    <!--<parameter name="url" value="https://www.nbc.com"/>-->
-    <parameter name="os" value="mac"/>
-    <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="https://www.nbc.com"/>
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="cloudEnvName" value="saucelabs"/>
+    <parameter name="os" value="OS X"/>
+    <parameter name="os_version" value="Sierra"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="60.0"/>
+    <parameter name="url" value="https://www.nbc.com/"/>
 
     <test name = "NBC Test Suits (Mac/Chrome)">
         <classes>
-            <class name="test.page.objects.TestHomePage"/>
-            <class name="test.page.objects.TestFooterPage"/>
+            <class name="test.page.objects.HomePageTest"/>
+            <class name="test.page.objects.HomePageTabFunctionTest"/>
+            <class name="test.page.objects.FooterSocialMediaTest"/>
+            <class name="test.page.objects.FooterExtLinkTest"/>
             <class name="test.page.objects.TestAllShows"/>
             <class name="test.page.objects.TestCurrentShows"/>
             <class name="test.page.objects.TestUpComingShows"/>
