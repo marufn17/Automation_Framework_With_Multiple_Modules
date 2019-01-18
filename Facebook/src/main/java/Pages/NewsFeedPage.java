@@ -1,6 +1,7 @@
 package Pages;
 
 import HelperClasses.ConnectToSqlDb;
+import HelperClasses.GoogleSheetReader;
 import HelperClasses.SimpleXlReader;
 import HelperClasses.Xls_Reader;
 import base.CommonAPI;
@@ -14,8 +15,12 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class NewsFeedPage extends CommonAPI {
     Actions actions = new Actions(driver);
@@ -106,6 +111,24 @@ public class NewsFeedPage extends CommonAPI {
             Thread.sleep(500);
         }
     }
+    //property loading method
+    public static Properties loadProperties() throws IOException {
+        Properties prop = new Properties();
+        File filepath = new File(System.getProperty("user.dir") +  "/src/test/resources/secretme.properties");
+        InputStream ism = new FileInputStream(filepath.getAbsoluteFile());
+        prop.load(ism);
+        ism.close();
+        return prop;
+    }
+    public void searchFromGoogleSheet() throws  IOException {
+        Properties properties = loadProperties();
+        String spreadsheetId = properties.getProperty("GOOGLE.spreadsheetIdme");
+        String range = properties.getProperty("GOOGLE.rangeme");
+        List<List<Object>> list = GoogleSheetReader.getSpreadSheetRecords(spreadsheetId,range);
+        for(List data: list){
+            searchbox.sendKeys(data.toString(),Keys.ENTER);
+        }
+    }
 
     //Click on Profile
     public String gotoprofile() throws InterruptedException {
@@ -168,7 +191,6 @@ public class NewsFeedPage extends CommonAPI {
 
         robot.keyRelease(KeyEvent.VK_TAB);
 
-
         robot.delay(500);
 
         robot.keyPress(KeyEvent.VK_META);
@@ -182,6 +204,7 @@ public class NewsFeedPage extends CommonAPI {
         robot.keyRelease(KeyEvent.VK_SHIFT);
 
         robot.keyRelease(KeyEvent.VK_G);
+
         robot.delay(500);
 
         robot.keyPress(KeyEvent.VK_META);
@@ -204,9 +227,7 @@ public class NewsFeedPage extends CommonAPI {
         robot.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(5000);
         postButton.click();
-
     }
-
     //Comment
     public void commentOnPost() throws InterruptedException {
         actions.click(comment).build().perform();
@@ -221,12 +242,6 @@ public class NewsFeedPage extends CommonAPI {
         actions.moveToElement(Like).click().build().perform();
         Thread.sleep(2000);
     }
-
-
-
-
-
-
     //=====>Landing pages<===========
     public ProfilePage landinonprofile() {
         actions.click(profilename).build().perform();
