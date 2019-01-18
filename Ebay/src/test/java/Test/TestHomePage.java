@@ -41,7 +41,9 @@ public class TestHomePage extends CommonAPI {
 
     @Test(priority = 4)
     public void motortab() {
-
+        String actual = homePage.setSearchMotortab();
+        String expected = "eBay Motors";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 5)
@@ -179,7 +181,6 @@ public class TestHomePage extends CommonAPI {
     public void signinpage() {
         homePage.setSingin();
     }
-
 }
 
 
