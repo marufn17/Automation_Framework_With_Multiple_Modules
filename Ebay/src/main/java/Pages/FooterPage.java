@@ -67,6 +67,7 @@ public class FooterPage extends HomePage {
         System.out.println(url);
         return url;
     }
+
     @FindBy(xpath = "//*[@id=\"gf-BIG\"]/table/tbody/tr/td[4]/ul/li[1]/h3/a")
     WebElement abouteBay;
 
