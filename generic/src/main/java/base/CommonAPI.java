@@ -77,7 +77,7 @@ public class CommonAPI {
     @Parameters({"url","browser"})
     @BeforeMethod
 
-    public void setUp(@Optional("https://www.ebay.com") String url, @Optional("chrome") String browser){
+    public void setUp(@Optional("https://www.ebay.com") String url, @Optional("chrome") String browser){   
         getDriverFromSystem(browser);
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
