@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SqlDataPage extends CommonAPI {
-    public SqlDataPage(){
-        PageFactory.initElements(driver,this);
+    public SqlDataPage() {
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(id = "gh-ac")
     WebElement searchBox;
     ConnectToSqlDb connectToSqlDb = new ConnectToSqlDb();
+
     public void setSearchBoxSqlDB() throws Exception {
         List<String> list = new ArrayList<String>();
         list.add("iphone");
@@ -30,5 +32,5 @@ public class SqlDataPage extends CommonAPI {
             searchBox.sendKeys(items, Keys.ENTER);
             searchBox.clear();
         }
-        }
+    }
 }

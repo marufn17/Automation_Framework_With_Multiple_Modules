@@ -41,7 +41,9 @@ public class TestHomePage extends CommonAPI {
 
     @Test(priority = 4)
     public void motortab() {
-        homePage.motortab();
+        String actual = homePage.setSearchMotortab();
+        String expected = "eBay Motors";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 5)
@@ -50,17 +52,17 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test(priority = 6)
-    public void fashiontabbutton(){
-    String actual = homePage.fashiontab();
-    String expected = "Your Routine, Revitalized";
-    Assert.assertEquals(actual, expected);
+    public void fashiontabbutton() {
+        String actual = homePage.fashiontab();
+        String expected = "Your Routine, Revitalized";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 7)
     public void electronicstab() {
-    String actual = homePage.electronic();
-    String expected = "Electronics";
-    Assert.assertEquals(actual, expected);
+        String actual = homePage.electronic();
+        String expected = "Electronics";
+        Assert.assertEquals(actual, expected);
     }
 
     @Test(priority = 8)
@@ -158,22 +160,27 @@ public class TestHomePage extends CommonAPI {
         homePage.useragreementsearch();
         Thread.sleep(2000);
     }
+
     @Test(priority = 26)
     public void hompagelogotab() throws InterruptedException {
         boolean logo = HomePage.homepagelogotest();
         Assert.assertEquals(logo, true);
     }
+
     @Test(priority = 27)
     public void itemssearchfromdatabase() throws Exception {
         homePage.searchfromdatabase();
     }
+
     @Test(priority = 28)
     public void itemsearchfromExceldata() throws InterruptedException {
         homePage.searchfromExcel();
     }
-    @Test(priority = 29)
-    public void signinpage(){homePage.setSingin();}
 
-   }
+    @Test(priority = 29)
+    public void signinpage() {
+        homePage.setSingin();
+    }
+}
 
 

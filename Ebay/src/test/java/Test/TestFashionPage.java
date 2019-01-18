@@ -14,11 +14,12 @@ public class TestFashionPage extends CommonAPI {
 
     @BeforeMethod
     public void setFashionPage() {
-        fashionPage = PageFactory.initElements(driver,FashionPage.class);
-        homePage = PageFactory.initElements(driver,HomePage.class);
+        fashionPage = PageFactory.initElements(driver, FashionPage.class);
+        homePage = PageFactory.initElements(driver, HomePage.class);
         homePage.fashiontab();
 
     }
+
     @Test(priority = 1)
     public void clickOnHealthtab() {
         fashionPage.healthtab();
