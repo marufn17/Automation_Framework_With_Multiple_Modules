@@ -18,6 +18,7 @@ public class testHoverOver extends HoverOver {
         hoverOver = PageFactory.initElements(driver, HoverOver.class);
     }
 
+
     @Test(priority = 1)
     public void testToysHoverOver() throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
@@ -25,11 +26,18 @@ public class testHoverOver extends HoverOver {
         hoverOver.toysHoverOver();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void testMotorsHoverOver() throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         hoverOver.motorsHoverOver();
+    }
+
+    @Test(priority = 3)
+    public void testMusicHoverOver() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        hoverOver.musicHoverOver();
     }
 }
 

@@ -28,6 +28,19 @@ public class HoverOver extends CommonAPI {
         Thread.sleep(3000);
         System.out.println(motorsHover.getText());
     }
+
+    public void musicHoverOver() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        Actions maker = new Actions(driver);
+        WebElement musicHover = driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[11]/a"));
+        Thread.sleep(3000);
+        maker.moveToElement(musicHover).build().perform();
+        Thread.sleep(3000);
+        System.out.println(musicHover.getText());
+    }
 }
+
+
 
 
