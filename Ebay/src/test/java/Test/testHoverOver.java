@@ -13,14 +13,25 @@ public class testHoverOver extends HoverOver {
 
     @BeforeMethod
     public void initHoverOverClass() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
-        hoverOver = PageFactory.initElements(driver, HoverOver.class); }
-    @Test(priority =1)
-    public void testToysHoverOver () throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        hoverOver = PageFactory.initElements(driver, HoverOver.class);
+    }
+
+    @Test(priority = 1)
+    public void testToysHoverOver() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         hoverOver.toysHoverOver();
     }
-  }
+
+    @Test(priority = 1)
+    public void testMotorsHoverOver() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        hoverOver.motorsHoverOver();
+    }
+}
 
 
 
