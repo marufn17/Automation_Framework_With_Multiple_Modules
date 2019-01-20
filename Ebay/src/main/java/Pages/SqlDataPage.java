@@ -1,6 +1,6 @@
 package Pages;
 
-import Helper.ConnectToSqlDb;
+import H_DatabaseReader.ConnectToSqlDb;
 import base.CommonAPI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
