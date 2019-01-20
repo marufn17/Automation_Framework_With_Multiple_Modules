@@ -9,10 +9,11 @@ public class FashionPage extends CommonAPI {
     public FashionPage() {
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(css = "#w1-w0-w7-toggle-button > span")
     WebElement healthbutton;
 
     public void healthtab() {
-       healthbutton.click();
+        healthbutton.click();
     }
 }

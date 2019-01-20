@@ -15,7 +15,7 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.ebay.com"/>
 
-    <test name = "Ebay Test Suits (Windows/Chrome)">
+    <test name="Ebay Test Suits (Windows/Chrome)">
         <classes>
             <class name="Test.TestHomePage"/>
             <class name="Test.TestFashionPage"/>
@@ -24,6 +24,7 @@
             <class name="Test.TestExcelReaderPage"/>
             <class name="Test.TestSqlDataPage"/>
             <class name="Test.TestFooterPage"/>
+            <class name="Test.testHoverOver"/>
         </classes>
     </test>
 </suite>
