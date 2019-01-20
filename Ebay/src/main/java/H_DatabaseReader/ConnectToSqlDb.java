@@ -1,4 +1,4 @@
-package Helper;
+package H_DatabaseReader;
 
 import java.io.IOException;
 import java.sql.*;

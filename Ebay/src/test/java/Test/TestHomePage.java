@@ -67,12 +67,16 @@ public class TestHomePage extends CommonAPI {
 
     @Test(priority = 8)
     public void collectiblesarttab() {
-        homePage.collectiblesarttab();
+        String actual =  homePage.collectibles();
+        String expected = "Shop by Category";
+        Assert.assertEquals(actual,expected);
     }
 
     @Test(priority = 9)
     public void homeandgardentab() {
-        homePage.homegardentab();
+        String actual = homePage.homegardentab();
+        String expected = "Home & Garden";
+        Assert.assertEquals(actual,expected);
     }
 
     @Test(priority = 10)

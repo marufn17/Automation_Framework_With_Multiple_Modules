@@ -1,7 +1,7 @@
 package Pages;
 
-import Helper.ConnectToSqlDb;
-import Helper.ExcelReader;
+import H_DatabaseReader.ConnectToSqlDb;
+import H_DatabaseReader.ExcelReader;
 import base.CommonAPI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage extends CommonAPI {
+public class HomePage<string> extends CommonAPI {
     public HomePage() {
         PageFactory.initElements(driver, this);
     }
@@ -57,12 +57,12 @@ public class HomePage extends CommonAPI {
     WebElement searchMotortab;
     @FindBy(css = "body > div.pagecontainer.srp-main--isLarge > div.pagecontainer__top > h1 > span")
     WebElement motortab;
-    public String setSearchMotortab(){
+
+    public String setSearchMotortab() {
         searchMotortab.click();
         String item = motortab.getText();
         return item;
     }
-
 
     @FindBy(xpath = "//a[contains(text(),'register')]")
     WebElement dailydeals;
@@ -98,17 +98,29 @@ public class HomePage extends CommonAPI {
 
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a")
     WebElement collectiblesart;
+    @FindBy(css = "#w1-w0 > div > h2")
+    WebElement getCollectiblesart;
+
+    public String collectibles() {
+        collectiblesart.click();
+        String st = getCollectiblesart.getText();
+        return st;
+    }
 
     public void collectiblesarttab() {
         collectiblesart.click();
     }
 
-    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[7]/a")
     WebElement homeandgarden;
+    @FindBy(css = "body > div.pagecontainer.srp-main--isLarge > div.pagecontainer__top > h1 > span")
+    WebElement getHomeandgarden;
 
-    public void homegardentab() {
+    public String homegardentab() {
         homeandgarden.click();
-    }
+        String string = getHomeandgarden.getText();
+        return string;
+}
 
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[7]/a")
     WebElement sportinggoods;
