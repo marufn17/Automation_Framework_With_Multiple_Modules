@@ -48,7 +48,9 @@ public class TestHomePage extends CommonAPI {
 
     @Test(priority = 5)
     public void dailydealstab() {
-        homePage.dailydealstab();
+        String actual = homePage.dailydealstab();
+        String expected = "Deals";
+        Assert.assertEquals(actual,expected);
     }
 
     @Test(priority = 6)

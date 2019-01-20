@@ -64,11 +64,15 @@ public class HomePage<string> extends CommonAPI {
         return item;
     }
 
-    @FindBy(xpath = "//a[contains(text(),'register')]")
+    @FindBy(xpath = "//a[contains(text(),'Deals')]")
     WebElement dailydeals;
-
-    public void dailydealstab() {
+    @FindBy(xpath = "//*[@id=\"refit-spf-container\"]/div[1]/h1/a")
+    WebElement dealstab;
+    public String dailydealstab() {
         dailydeals.click();
+        String deals;
+        deals = dealstab.getText();
+        return deals;
     }
 
     @FindBy(linkText = "Fashion")
