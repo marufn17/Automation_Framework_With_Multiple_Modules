@@ -88,9 +88,6 @@ public class HomePage<string> extends CommonAPI {
         String st = getCollectiblesart.getText();
         return st;
     }
-    public void collectiblesarttab() {
-        collectiblesart.click();
-    }
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[7]/a")
     WebElement homeandgarden;
     @FindBy(css = "body > div.pagecontainer.srp-main--isLarge > div.pagecontainer__top > h1 > span")
@@ -100,15 +97,23 @@ public class HomePage<string> extends CommonAPI {
         String string = getHomeandgarden.getText();
         return string;
     }
-    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[7]/a")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[8]/a")
     WebElement sportinggoods;
-    public void sportinggoodsTest() {
+    @FindBy(css = "#w1-w0 > div > h2")
+    WebElement getSportinggoods;
+    public String sportinggoodsTest() {
         sportinggoods.click();
+        String string = getSportinggoods.getText();
+        return string;
     }
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[9]/a")
     WebElement toy;
-    public void toytab() {
+    @FindBy(css = "#mainContent > section.b-module.b-blurb > div > h1 > strong")
+    WebElement getToy;
+    public String toytab() {
         toy.click();
+        String string = getToy.getText();
+        return string;
     }
     @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[14]/span")
     WebElement more;
