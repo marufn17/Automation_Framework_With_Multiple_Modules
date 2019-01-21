@@ -10,8 +10,7 @@ public class TestHomePage extends CommonAPI {
     HomePage homePage;
     ExtentReports reports;
     @BeforeMethod
-    public void setUp() {
-        this.homePage = new HomePage();
+    public void setUp() {this.homePage = new HomePage();
         reports = ExtentManager.getInstance();
     }
     @Test(priority = 2)
@@ -70,11 +69,15 @@ public class TestHomePage extends CommonAPI {
     }
     @Test(priority = 10)
     public void sportinggoods() {
-        homePage.sportinggoodsTest();
+        String actual = homePage.sportinggoodsTest();
+        String expected = "Featured Categories";
+        Assert.assertEquals(actual,expected);
     }
     @Test(priority = 11)
     public void toysearch() {
-        homePage.toytab();
+        String actual = homePage.toytab();
+        String expected = "Toys and Hobbies";
+        Assert.assertEquals(actual,expected);
     }
     @Test(priority = 12)
     public void morepage() {
