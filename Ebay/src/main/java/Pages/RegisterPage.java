@@ -4,6 +4,7 @@ import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import report.TestLogger;
 
 public class RegisterPage extends CommonAPI {
     public RegisterPage() {
@@ -11,22 +12,24 @@ public class RegisterPage extends CommonAPI {
     }
     @FindBy(css = "#firstname")
     WebElement firstName;
-    public void setFirstName(String FirstName) {
-        firstName.sendKeys(FirstName);
-    }
     @FindBy(css = "#lastname")
     WebElement lastName;
-    public void setLastName(String LastName) {
-        lastName.sendKeys(LastName);
-    }
     @FindBy(css = "#email")
     WebElement email;
-    public void setEmail(String Email) {
-        email.sendKeys(Email);
-    }
     @FindBy(css = "#PASSWORD")
     WebElement password;
-    public void setPassword() {
+    @FindBy(css = "#ppaFormSbtBtn")
+    WebElement createAccountButton;
+    @FindBy(css = "#ocs-inflow > h3")
+    WebElement userdifferntemail;
+    public String setRegisterPage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + CommonAPI.convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        firstName.sendKeys("Safwan");
+        lastName.sendKeys("Rahman");
+        email.sendKeys("email@email.com");
         password.sendKeys("abc@123");
+        createAccountButton.click();
+        String string = createAccountButton.getText();
+        return string;
     }
 }
