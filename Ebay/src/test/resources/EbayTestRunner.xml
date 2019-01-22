@@ -17,13 +17,13 @@
 
     <test name="Ebay Test Suits (Windows/Chrome)">
         <classes>
-            <!--<class name="Test.TestHomePage"/>
+            <class name="Test.TestHomePage"/>
             <class name="Test.TestFashionPage"/>
             <class name="Test.TestRegisterPage"/>
             <class name="Test.TestSignInPage"/>
             <class name="Test.TestExcelReaderPage"/>
             <class name="Test.TestSqlDataPage"/>
-            <class name="Test.TestFooterPage"/>-->
+            <class name="Test.TestFooterPage"/>
             <class name="Test.testHoverOver"/>
         </classes>
     </test>

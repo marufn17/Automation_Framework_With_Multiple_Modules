@@ -11,6 +11,8 @@
     <modules>
         <module>generic</module>
         <module>Ebay</module>
+        <module>Facebook</module>
+        <module>nbc</module>
     </modules>
     <dependencyManagement>
         <dependencies>
